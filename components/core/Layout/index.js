@@ -6,7 +6,7 @@ import classes from './styles.module.scss'
 const Layout = ({ children }) => {
   return (
     <div className={classes.container}>
-      <HeadComponent className='headComponent' />
+      <HeadComponent />
       <main className={classes.main}>
         {children}
       </main>
