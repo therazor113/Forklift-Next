@@ -1,24 +1,23 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 
 import Layout from '../components/core/Layout'
 import LiveClock from '../components/utilities/LiveClock'
-import IdRequest from '../components/api/requests/IdRequest'
 
 const Home = () => {
+	const [user, setUser] = useState([])
+
 	const inputRef = useRef(null)
 
-	const handleClick = () => {
-		if (inputRef.current.value == 123) {
-			location.href='/login'
-		} else {
-			console.log(inputRef.current.value)
-		}
+	const handleClick = async () => {
+		const response = await fetch(`api/NamesApi/${inputRef.current.value}`)
+		const data = await response.json()
+		setUser(data.id)
 	}
 
   return (
     <Layout>
 			<LiveClock />
-			<IdRequest />
+			<h2>{user}</h2>
 			<h1>Welcome, please scan your badge</h1>
 			<h2>Badge ID:</h2>
 			<input ref={inputRef}/>

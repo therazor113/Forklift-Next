@@ -1,7 +1,8 @@
 export const names = [
   {
     id: 123,
-    first: 'John'
+    first: 'John',
+    last: 'Johnson'
   },
   {
     id: 234,
