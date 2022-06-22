@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react"
 
-const LiveClock = ( CurrentDate, ClockString ) => {
+const LiveClock = () => {
+  
   const [index, setIndex] = useState('-')
-  CurrentDate = new Date()
-  ClockString = CurrentDate.toDateString() + " " + CurrentDate.toLocaleTimeString()
+  const CurrentDate = new Date()
+  const ClockString = CurrentDate.toDateString() + " " + CurrentDate.toLocaleTimeString()
   
   useEffect(() => {
     const interval = setInterval(() => {setIndex(ClockString)}, 1000)
-      return () => clearInterval(interval)
-  })
+    return () => clearInterval(interval)
+  }, [ClockString])
   
   return (
     <h2>

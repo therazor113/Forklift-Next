@@ -1,21 +1,21 @@
-import { useState } from 'react'
 
-const BadgeInputBox = ({ sendTo }) => {
-  const [title, setTitle] = useState('')
+const BadgeInputBox = ({ onClick, inputValue }) => {
 
-  const handleClick = () => {
-		console.log(title)
-		if (title == 1234) {
-			sendTo = '/login'
-		} else {
-			sendTo = '/'
-		}
+	const handleClick = async () => {
+		try {
+      const response = await fetch(`api/NamesApi/${inputValue}`)
+      const data = await response.json()
+      console.log(data)
+      let result = data.first
+      onClick(result)
+		} catch {
+			console.log('error')
+      onClick([])
+		}		
 	}
+
   return (
-    <>
-      <input onChange={event => setTitle(event.target.value)} />
-      <button onClick={handleClick}>Test</button>
-    </>
+    <button onMouseDown={handleClick}>Bruh</button>
   )
 }
 
