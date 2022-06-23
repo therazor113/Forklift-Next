@@ -1,33 +1,33 @@
 import { useRef, useState } from 'react'
 
+import Link from 'next/link'
 import Layout from '../components/core/Layout'
-import BadgeInputBox from '../components/utilities/BadgeInputBox'
-import LiveClock from '../components/utilities/LiveClock'
+import SubmitUser from '../components/utilities/SubmitUser'
+import TempData from '../components/utilities/TempData'
+
 
 const Home = () => {
 	const [user, setUser] = useState([])
-	const [inputValue, setInputValue] = useState([])
+	const [input, setInput] = useState(null)
 	const inputRef = useRef(null)
 
-	const handleClick = (result) => {
-		setUser(result)
+	const handleClick = (userId) => {
+		setUser(userId.first)
 	}
 
 	const handleInput = () => {
-		setInputValue(inputRef.current.value)
+		setInput(inputRef.current.value)
 	}
 
   return (
     <Layout>
-			<LiveClock />
-			<BadgeInputBox
-			onClick={handleClick}
-			inputValue={inputValue}
-			/>
 			<h2>{user}</h2>
-			<h1>Welcome, please scan your badge</h1>
-			<h2>Badge ID:</h2>
+			<h2>{TempData.name}</h2>
+			<SubmitUser onClick={handleClick} input={input}/>
 			<input ref={inputRef} onChange={handleInput} />
+			<Link href='/confirm'>
+				<a>Confirm Page</a>
+			</Link>
 		</Layout>
   )
 }
