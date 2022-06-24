@@ -2,33 +2,35 @@ import { useRef, useState } from 'react'
 
 import Link from 'next/link'
 import Layout from '../components/core/Layout'
-import SubmitUser from '../components/utilities/SubmitUser'
-import TempData from '../components/utilities/TempData'
-
+import UserData from '../components/utilities/UserData'
+import { UserProvider } from './UserContext'
 
 const Home = () => {
 	const [user, setUser] = useState([])
 	const [input, setInput] = useState(null)
 	const inputRef = useRef(null)
 
-	const handleClick = (userId) => {
-		setUser(userId.first)
-	}
-
 	const handleInput = () => {
 		setInput(inputRef.current.value)
 	}
 
+	const handleData = (data) => {
+		setUser(data)
+		console.log(data)
+	}
+
   return (
-    <Layout>
-			<h2>{user}</h2>
-			<h2>{TempData.name}</h2>
-			<SubmitUser onClick={handleClick} input={input}/>
-			<input ref={inputRef} onChange={handleInput} />
-			<Link href='/confirm'>
-				<a>Confirm Page</a>
-			</Link>
-		</Layout>
+		<UserProvider>
+			<Layout>
+				
+				<input ref={inputRef} onChange={handleInput} />
+				<UserData onClick={handleData} input={input}/>
+
+				<Link href='/confirm'>
+					<a>Confirm Page</a>
+				</Link>
+			</Layout>
+		</UserProvider>
   )
 }
 

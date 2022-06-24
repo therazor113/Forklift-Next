@@ -11,6 +11,7 @@ const SubmitUser = ({ onClick, input }) => {
       onClick([])
     }
   }
+  
   return (
     <button onClick={handleClick}>Set User</button>
   )
