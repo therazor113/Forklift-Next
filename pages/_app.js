@@ -1,11 +1,11 @@
-import { UserProvider } from '../components/context/UserContext/UserContext'
+import { UserProvider } from '../components/context/UserContext'
 import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
   return (
-  <UserProvider>
-    <Component {...pageProps} />
-  </UserProvider>
+    <UserProvider>
+      <Component {...pageProps} />
+    </UserProvider>
   )
 }
 

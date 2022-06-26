@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import Link from 'next/link'
 import Layout from "../components/core/Layout"
-import UserContext from '../components/context/UserContext/UserContext'
+import UserContext from '../components/context/UserContext'
 
 const Confirm = () => {
 

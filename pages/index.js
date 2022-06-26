@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import Layout from '../components/core/Layout'
-import UserData from '../components/utilities/UserData'
+import Login from '../components/utilities/Login'
 
 const Home = () => {
   return (
 			<Layout>
-				<UserData />
+				<Login />
 				<Link href='/confirm'>
 					<a>Confirm Page</a>
 				</Link>
