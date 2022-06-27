@@ -1,4 +1,4 @@
-import { names } from "../../../data/names";
+import { names } from '../../../../data/names'
 
 export default function handler(req, res) {
   const { userId } = req.query

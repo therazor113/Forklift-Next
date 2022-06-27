@@ -19,7 +19,7 @@ const Key = ({ keys, keyType, id, currentKey, onClick }) => {
 	}, [currentKey, id])
 
   return (
-    <button onClick={handleClick}>{keys.join('')}</button>
+    <button onMouseDown={handleClick}>{keys.join('')}</button>
   )
 }
 

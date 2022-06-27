@@ -1,0 +1,38 @@
+.login {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    h1 {
+        font-size: 40px;
+    }
+}
+
+.inputContainer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    input {
+        width: 350px;
+        height: 45px;
+        font-size: 30px;
+        border: 2px inset white;
+        background-color: transparent;
+        color: white;
+    }
+    button {
+        border-radius: 8px;
+        border: 2px outset black;
+        background-color: green;
+        font-size: 3rem;
+        width: 80px;
+        height: 80px;
+        &:active {
+            border: 2px inset lightgray;
+        }
+    }
+    h2 {
+        font-size: 30px;
+    }
+}

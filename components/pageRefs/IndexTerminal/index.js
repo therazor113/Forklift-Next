@@ -1,11 +1,13 @@
+import Link from 'next/link'
+import classes from './styles.module.scss'
 import { useRouter } from 'next/router'
 import { useContext, useState, useRef } from "react"
 import UserContext from "../../context/UserContext"
-import Keys from '../KeyPad/Keys'
 
-const UserData = () => {
+
+const IndexTerminal = () => {
   const { setUserData } = useContext(UserContext)
-  const [input, setInput] = useState(0)
+  const [input, setInput] = useState(null)
   const inputRef = useRef()
   const router = useRouter()
 
@@ -15,11 +17,11 @@ const UserData = () => {
 
   const handleEnter = async () => {
     try {
-      const req = await fetch(`api/NamesApi/${input}`)
+      const req = await fetch(`api/NamesApi/[users]/${input}`)
       const data = await req.json()
       setUserData(data)
       console.log(data)
-      router.push('/confirm')
+      router.push('/loginConfirm')
     } catch {
       console.log('error')
     }
@@ -30,14 +32,18 @@ const UserData = () => {
       handleEnter()
     }
   }
-
   return (
-    <>
+  <main className={classes.login}>
+    <h1>Welcome, please scan your badge</h1>
+    <div className={classes.inputContainer}>
+      <h2>Badge ID: </h2>
       <input ref={inputRef} onChange={handleInput} onKeyUp={handleKeyUp} />
-      <Keys inputRef={inputRef} setInput={setInput}/>
-      <button onClick={handleEnter}>Enter</button>
-    </>
+      <Link href={'/loginKeypad'}>
+        <button>&#x2328;</button>
+      </Link>
+    </div>
+  </main>
   )
 }
 
-export default UserData
+export default IndexTerminal

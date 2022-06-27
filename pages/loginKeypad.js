@@ -1,10 +1,10 @@
 import Layout from '../components/core/Layout'
-import IndexTerminal from '../components/pageRefs/IndexTerminal'
+import LoginKeypad from '../components/pageRefs/LoginKeypad'
 
 const Home = () => {
   return (
 			<Layout titleID='Login:' titleExtra='Build#: 000000-0000P'>
-				<IndexTerminal />
+				<LoginKeypad />
 			</Layout>
   )
 }
