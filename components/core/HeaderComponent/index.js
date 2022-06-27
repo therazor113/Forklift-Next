@@ -1,9 +1,9 @@
 import LiveClock from './HeaderItems/LiveClock'
 import classes from './styles.module.scss'
 
-const HeaderComponent = ({ titleID, titleExtra }) => {
+const HeaderComponent = ({ titleID, titleExtra, style }) => {
   return (
-    <header className={classes.header}>
+    <header style={style} className={classes.container}>
         <div className={classes.title}>
           <h2>{titleID}</h2>
           <p className={classes.extra}>{titleExtra}</p>

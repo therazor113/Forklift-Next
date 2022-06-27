@@ -1,22 +1,19 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
+import ConfirmCheckBox from '../ConfirmCheckBox'
 
 import classes from '../styles.module.scss'
 
 const ConfirmButtons = () => {
-  const [checkBox, setCheckBox] = useState(false)
+  const [route, setRoute] = useState('/loginSurvey')
   const router = useRouter()
-  
-  const handleChange = () => {
-    setCheckBox(val => val == false ? true : false)
-  }
 
+  const handleCheck = () => {
+    setRoute(val => val == '/loginSurvey' ? '/deviceSetup' : '/loginSurvey')
+  }
+  
   const handleYes = () => {
-    if (checkBox == true) {
-      router.push('/deviceSetup')
-    } else {
-      router.push('/loginSurvey')
-    }
+      router.push(route)
   }
 
   const handleNo = () => {
@@ -28,11 +25,7 @@ const ConfirmButtons = () => {
         <button onClick={handleYes}>Yes</button>
         <button onClick={handleNo}>No</button>
       </div>
-      <div className={classes.checkContainer}>
-          <input type='checkbox' onChange={handleChange} />
-          <button></button>
-          <h2>Show Device Setup</h2>
-      </div>
+      <ConfirmCheckBox onCheck={handleCheck} />
     </>
   )
 }
