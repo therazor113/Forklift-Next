@@ -1,0 +1,64 @@
+.container {
+    color: white;
+    font-size: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+.buttonDiv {
+    margin-top: 2rem;
+    display: flex;
+    gap: 2rem;
+    button {
+        margin: 40px;
+        border-radius: 10px;
+        border: 2px outset;
+        background-color: skyblue;
+        font-size: 180%;
+        width: 200px;
+        height: 80px;
+        font-weight: bold;
+        &:active {
+            border: 3px inset;
+            background-color: green;
+        }
+    }
+}
+
+/* checkbox */
+.checkContainer {
+    display: flex;
+    margin-top: 10rem;
+    margin-left: 25rem;
+    gap: 15px;
+    button {
+        width: 70px;
+        height: 70px;
+        background-color: skyblue;
+        border: 2px outset;
+        border-radius: 10px;
+    }
+    input {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        opacity: 0;
+        &:checked ~ button::after {
+            content: 'X';
+            font-weight: bolder;
+            font-size: 40px;
+        }
+        &:checked ~ button {
+            background-color: orange;
+        }
+    }
+    h2 {
+        color: white;
+        font-size: 200%;
+        font-weight: bold;
+        align-self: center;
+    }
+}
+

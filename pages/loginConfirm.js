@@ -1,6 +1,6 @@
-import Layout from "../components/core/Layout"
-import ConfirmName from "../components/utilities/Confirm/ConfirmName"
-import ConfirmButtons from "../components/utilities/Confirm/ConfirmButtons"
+import Layout from '../components/core/Layout'
+import ConfirmName from '../components/pageRefs/LoginConfirm/ConfirmName'
+import ConfirmButtons from '../components/pageRefs/LoginConfirm/ConfirmButtons'
 
 const Confirm = () => {
   return (
