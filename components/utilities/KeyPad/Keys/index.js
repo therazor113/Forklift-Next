@@ -1,5 +1,9 @@
 import { useState, useEffect, useRef } from "react"
-import FunctionKeys from "../FunctionKeys"
+import Backspace from "../FunctionKeys/Backspace"
+import Cancel from "../FunctionKeys/Cancel"
+import ChangeKeys from "../FunctionKeys/ChangeKeys"
+import Enter from "../FunctionKeys/Enter"
+
 import Key from "../Key"
 
 import classes from './styles.module.scss'
@@ -26,7 +30,7 @@ const numberArray = [
   [''], ['0'], ['']
 ]
 
-const Keys = ({ inputRef, setInput, onEnter, keypadButtonRef, keypadRef }) => {
+const Keys = ({ inputRef, setInput, onEnter }) => {
   const [currentKey, setCurrentKey] = useState(null)
   const [keyType, setKeyType] = useState('ABC')
   const [keyArray, setKeyArray] = useState(numberArray)
@@ -36,12 +40,12 @@ const Keys = ({ inputRef, setInput, onEnter, keypadButtonRef, keypadRef }) => {
     timerRef.current = setTimeout(() => {setCurrentKey(null)}, 650);
   }
 
-  const Cancel = () => {
+  const handleCancel = () => {
     setKeyType('ABC')
     setKeyArray(numberArray)
   }
 
-  const ChangeKeys = () => {
+  const handleChangeKeys = () => {
     setKeyType(val => val == 'ABC' ? '123' : 'ABC')
     setKeyArray(val => val == numberArray ? letterArray : numberArray)
   }
@@ -78,15 +82,10 @@ const Keys = ({ inputRef, setInput, onEnter, keypadButtonRef, keypadRef }) => {
         ))}
       </div>
       <div className={classes.functionKeys}>
-      <FunctionKeys
-      inputRef={inputRef}
-      onEnter={onEnter}
-      onCancel={Cancel}
-      onChangeKeys={ChangeKeys}
-      setInput={setInput}
-      keypadButtonRef={keypadButtonRef}
-      keypadRef={keypadRef}
-      />
+        <Backspace inputRef={inputRef} setInput={setInput} />
+        <Enter onEnter={onEnter} />
+        <Cancel inputRef={inputRef} setInput={setInput} onCancel={handleCancel} />
+        <ChangeKeys onChangeKeys={handleChangeKeys} />
       </div>
     </main>
   )
