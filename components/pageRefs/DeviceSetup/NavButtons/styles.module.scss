@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 15vh;
+    button {
+        width: 200px;
+        height: 75px;
+        border: 1px solid gray;
+        border-radius: 10px;
+        font-size: 30px;
+        font-weight: bold;
+        &:active {
+            background-color: green;
+            border: 2px inset gray;
+        }
+    }
+}

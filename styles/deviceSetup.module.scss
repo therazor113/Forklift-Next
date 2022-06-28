@@ -1,7 +1,7 @@
 .container {
-    border: 2px solid black;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 96vw;
     height: 93vh;
 }

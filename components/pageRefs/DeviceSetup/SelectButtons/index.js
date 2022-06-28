@@ -1,16 +1,35 @@
 import classes from './styles.module.scss'
 
 const SelectButtons = () => {
+
   return (
     <main className={classes.container}>
       <h2>Type</h2>
-      <button>Reweigh</button>
-      <button>DMS</button>
-      <button>Both</button>
+      <div>
+        <input type='radio' name='type' />
+        <button>Reweigh</button>
+      </div>
+      <div>
+        <input type='radio' name='type' />
+        <button>DMS</button>
+      </div>
+      <div>
+        <input type='radio' name='type' />
+        <button>Both</button>
+      </div>
       <h2>Network</h2>
-      <button>WIFI</button>
-      <button>Cellular</button>
-      <button>Auto</button>
+      <div>
+        <input type='radio' name='network' />
+        <button>Wifi</button>
+      </div>
+      <div>
+        <input type='radio' name='network' />
+        <button>Cellular</button>
+      </div>
+      <div>
+        <input type='radio' name='network' />
+        <button>Auto</button>
+      </div>
     </main>
   )
 }
