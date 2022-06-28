@@ -1,14 +1,11 @@
-import { UserProvider } from '../components/context/UserContext'
-import { WeightProvider } from '../components/context/WeightContext'
+import Providers from '../components/context/Providers'
 import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <WeightProvider>
-      <UserProvider>
-        <Component {...pageProps} />
-      </UserProvider>
-    </WeightProvider>
+  <Providers>
+    <Component {...pageProps} />
+  </Providers>
   )
 }
 

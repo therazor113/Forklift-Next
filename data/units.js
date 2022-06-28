@@ -1,0 +1,35 @@
+export const units = [
+  {
+    proNumber: 123456789,
+    shipper: 'Jimmy',
+    consignee: 'Bilbo',
+    handlingUnits: '3',
+    weight: '1000',
+    dim: 'N/A',
+    loadDoor: '50',
+    dockDoor: '50',
+    drop: 'N/A',
+  },
+  {
+    proNumber: 100000000,
+    shipper: 'Hilly',
+    consignee: 'Bango',
+    handlingUnits: '2',
+    weight: '500',
+    dim: 'N/A',
+    loadDoor: '135',
+    dockDoor: '135',
+    drop: 'N/A',
+  },
+  {
+    proNumber: 987654321,
+    shipper: 'Johny',
+    consignee: 'Joe',
+    handlingUnits: '1',
+    weight: '10',
+    dim: 'N/A',
+    loadDoor: '10',
+    dockDoor: '10',
+    drop: 'N/A',
+  }
+]

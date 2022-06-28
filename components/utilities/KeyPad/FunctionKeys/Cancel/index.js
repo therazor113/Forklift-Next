@@ -1,13 +1,8 @@
-import { useRouter } from "next/router"
-
-const Cancel = ({ inputRef, setInput, onCancel }) => {
-  const router = useRouter()
+const Cancel = ({ onCancel }) => {
 
   const Cancel = () => {
-    inputRef.current.value = null
-    setInput(null)
+    history.back()
     onCancel()
-    router.push('/')
   }
 
   return (

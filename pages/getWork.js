@@ -1,5 +1,5 @@
 import Layout from '../components/core/Layout'
-import WorkName from '../components/pageRefs/GetWorkTerminal/WorkName'
+import GetWorkTerminal from '../components/pageRefs/GetWorkTerminal'
 
 
 const getWork = () => {
@@ -7,7 +7,7 @@ const getWork = () => {
     <Layout 
     style={{backgroundColor: 'white', color: 'black'}}
     >
-      <WorkName />
+      <GetWorkTerminal />
     </Layout>
   )
 }

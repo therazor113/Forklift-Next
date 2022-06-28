@@ -16,7 +16,9 @@ const Information = () => {
         <h2>Term: <span>N/A</span></h2>
         <h2>Badge#: <span>{userData.id}</span></h2>
       </div>
-    <LogoutButton classes={classes} />
+      <div className={classes.logout}>
+        <LogoutButton title={'Logout'} />
+      </div>
     </main>
   )
 }

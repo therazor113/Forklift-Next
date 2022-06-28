@@ -6,9 +6,9 @@
         width: 500px;
         height: 45px;
         font-size: 30px;
-        border: 2px inset white;
+        border: 2px inset gray;
         background-color: transparent;
-        color: white;
+        color: black;
     }
     h2 {
         font-size: 35px;
@@ -19,7 +19,7 @@
     flex-direction: column;
     gap: 60px;
     align-items: center;
-    color: white;
+    color: black;
     h1 {
         font-size: 45px;
     }
@@ -30,7 +30,7 @@
     gap: 4rem;
     button {
         border-radius: 10px;
-        background-color: skyblue;
+        background-color: green;
         border: 2px outset;
         font-size: 200%;
         width: 200px;

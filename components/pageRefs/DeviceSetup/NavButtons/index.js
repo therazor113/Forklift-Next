@@ -14,7 +14,7 @@ const NavButtons = () => {
   }
 
   const handleCancel = () => {
-    router.push('/getWork')
+    router.push('/loginSurvey')
   }
   return (
     <main className={classes.container}>

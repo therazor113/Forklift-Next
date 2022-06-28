@@ -41,6 +41,7 @@ const LoginKeypad = () => {
         <input ref={inputRef} onChange={handleInput} onKeyUp={handleKeyUp} />
       </div>
         <Keys
+        classes={classes}
         inputRef={inputRef}
         setInput={setInput}
         onEnter={handleEnter}

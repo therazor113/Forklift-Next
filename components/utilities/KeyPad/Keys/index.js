@@ -6,9 +6,6 @@ import Enter from "../FunctionKeys/Enter"
 
 import Key from "../Key"
 
-import classes from './styles.module.scss'
-
-
 // change this to only show certain buttons for current needs (remove large words buttons on login page)
 const letterArray = [
   ['_'],
@@ -30,7 +27,7 @@ const numberArray = [
   [''], ['0'], ['']
 ]
 
-const Keys = ({ inputRef, setInput, onEnter }) => {
+const Keys = ({ inputRef, setInput, onEnter, classes }) => {
   const [currentKey, setCurrentKey] = useState(null)
   const [keyType, setKeyType] = useState('ABC')
   const [keyArray, setKeyArray] = useState(numberArray)
@@ -84,7 +81,7 @@ const Keys = ({ inputRef, setInput, onEnter }) => {
       <div className={classes.functionKeys}>
         <Backspace inputRef={inputRef} setInput={setInput} />
         <Enter onEnter={onEnter} />
-        <Cancel inputRef={inputRef} setInput={setInput} onCancel={handleCancel} />
+        <Cancel onCancel={handleCancel} />
         <ChangeKeys onChangeKeys={handleChangeKeys} />
       </div>
     </main>
