@@ -1,4 +1,26 @@
 .container {
     border: 1px solid white;
-    border-radius: 1rem;
+    border-radius: 0.7rem;
+    padding: 1rem;
+    h2 {
+        font-size: 35px;
+    }
+    span {
+        margin-left: 1rem;
+        font-size: 45px;
+    }
+    button {
+        background-color: lightgray;
+        border-radius: 0.6rem;
+        border: 2px outset;
+        font-size: 180%;
+        width: 200px;
+        height: 80px;
+        font-weight: bold;
+    }
+}
+.buttons {
+    margin: 1rem;
+    display: flex;
+    gap: 3rem;
 }

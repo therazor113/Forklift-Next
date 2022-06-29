@@ -7,15 +7,15 @@ const ProInformation = () => {
   const {currentPro, setCurrentPro} = useContext(CurrentProContext) // will use setCurrent later
   return (
     <main className={classes.container}>
-      <h2>SH: {currentPro.shipper}</h2>
-      <h2>CN: {currentPro.consignee}</h2>
+      <h2>SH: <span>{currentPro.shipper}</span></h2>
+      <h2>CN: <span>{currentPro.consignee}</span></h2>
       <div>
-      <h2>HU: {currentPro.handlingUnits}</h2>
-      <h2>Wgt: {currentPro.weight}</h2>
-      <h2>Dim#: {currentPro.dim}</h2>
+      <h2>HU: <span>{currentPro.handlingUnits}</span></h2>
+      <h2>Wgt: <span>{currentPro.weight}</span></h2>
+      <h2>Dim#: <span>{currentPro.dim}</span></h2>
       </div>
-      <h2>Load Door: {currentPro.loadDoor}</h2>
-      <h2>Drop#: {currentPro.drop}</h2>
+      <h2>Load Door: <span>{currentPro.loadDoor}</span></h2>
+      <h2>Drop#: <span>{currentPro.drop}</span></h2>
     </main>
   )
 }

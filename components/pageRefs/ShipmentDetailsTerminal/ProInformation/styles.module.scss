@@ -5,5 +5,13 @@
     div {
         display: flex;
         justify-content: space-between;
+        gap: 40px;
+    }
+    h2 {
+        font-size: 40px;
+    }
+    span {
+        font-size: 40px;
+        font-weight: 400;
     }
 }

@@ -21,7 +21,7 @@ const WorkName = () => {
       <h2>There is no assignment available. Please see your Supervisor <br/> or click RETRY</h2>
       <div className={classes.navButtons}>
         <LiveGreenSheetButton />
-        <ManualProButton />
+        <ManualProButton title={'MANUAL PRO ENTRY'} />
       </div>
     </main>
   )

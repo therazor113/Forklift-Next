@@ -1,0 +1,9 @@
+.container {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    button:active {
+        border: 3px inset;
+        background-color: green;
+    }
+}

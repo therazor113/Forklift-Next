@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 
-const ManualProButton = () => {
+const ManualProButton = ({ title }) => {
   const router = useRouter()
 
   const handleClick = () => {
@@ -8,7 +8,7 @@ const ManualProButton = () => {
   }
 
   return (
-    <button onClick={handleClick}>MANUAL PRO ENTRY</button>
+    <button onClick={handleClick}>{title}</button>
   )
 }
 
