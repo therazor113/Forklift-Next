@@ -1,8 +1,9 @@
 .container {
+    display: flex;
+    justify-content: space-between;
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 1rem;
     padding-top: 5rem;
     border-radius: 0.7rem;
@@ -12,12 +13,10 @@
         font-size: 45px;
         grid-column: 1 / 1;
         li {
-            color: black;
-            text-align: center;
+            text-align: start;
             text-decoration: underline;
             text-decoration-thickness: 2px;
             text-underline-offset: 2px;
-            background-color: yellow;
         }
     }
     h2 {
@@ -28,6 +27,7 @@
     }
 }
 .weightFunction {
+    height: 50vh;
     display: flex;
     justify-content: space-between;
     gap: 2rem;
@@ -36,7 +36,8 @@
     grid-column: 2 / 2;
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    align-items: center;
+
 }
 .select {
     display: flex;

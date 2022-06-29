@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 
-const PreviousProButton = ({ title }) => {
+const PreviousProButton = () => {
   const router = useRouter()
 
   const handleClick = () => {

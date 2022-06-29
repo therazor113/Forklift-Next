@@ -1,18 +1,12 @@
 import { useContext } from 'react'
 import WeightContext from '../../../context/WeightContext'
+import ScaleNotWorking from '../../../utilities/ScaleNotWorking'
+import ZeroScale from '../../../utilities/ZeroScale'
 
 import classes from './styles.module.scss'
 
 const WeightCheck = () => {
-  const { weightData, setWeightData } = useContext(WeightContext)
-
-  const handleZero = () => {
-    setWeightData(0)
-  }
-  
-  const handleNoScale = () => {
-    alert('Alert! If you continue your supervisor will be notified!')
-  }
+  const { weightData } = useContext(WeightContext)
 
   return (
     <main className={classes.container}>
@@ -21,8 +15,8 @@ const WeightCheck = () => {
         <span>{weightData}</span>
       </div>
       <div className={classes.buttonDiv}>
-        <button onClick={handleZero}>Zero Scale</button>
-        <button onClick={handleNoScale}>Scale Not Working</button>
+        <ZeroScale />
+        <ScaleNotWorking />
       </div>
     </main>
   )

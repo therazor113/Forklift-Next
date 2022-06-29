@@ -1,12 +1,14 @@
 import { useRef, useState, useContext } from 'react'
 import { useRouter } from 'next/router'
 import CurrentProContext from '../../context/CurrentProContext'
+import PreviousProContext from '../../context/PreviousProContext'
 import Keys from '../../utilities/KeyPad/Keys'
 
 import classes from './styles.module.scss'
 
 const ManualProEntryTerminal = () => {
   const [input, setInput] = useState(null)
+  const { setPreviousProData } = useContext(PreviousProContext)
   const { setCurrentPro } = useContext(CurrentProContext)
   const router = useRouter()
   const inputRef = useRef()
@@ -16,6 +18,7 @@ const ManualProEntryTerminal = () => {
     const res = await fetch(`api/ProNumberApi/[pros]/${input}`)
     const data = await res.json()
     setCurrentPro(data)
+    setPreviousProData(prevData => [...prevData, data])
     console.log(data)
     router.push('/shipmentDetails')
     } catch {

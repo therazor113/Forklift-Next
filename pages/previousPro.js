@@ -1,9 +1,12 @@
 import Layout from '../components/core/Layout'
+import PreviousProTerminal from '../components/pageRefs/PreviousProTerminal'
 
 const previousPro = () => {
+
+
   return (
-    <Layout style={{backgroundColor: 'rgb(25, 25, 200)', color: 'white'}}>
-      <h2>PreviousPro</h2>
+    <Layout titleID={'Previous Pro List:'} style={{backgroundColor: 'rgb(25, 25, 200)', color: 'white'}}>
+      <PreviousProTerminal />
     </Layout>
   )
 }

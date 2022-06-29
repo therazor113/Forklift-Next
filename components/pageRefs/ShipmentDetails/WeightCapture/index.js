@@ -1,12 +1,14 @@
 import { useState, useContext } from "react"
 import { useRouter } from 'next/router'
 import WeightContext from "../../../context/WeightContext"
+import WeightCaptureContext from "../../../context/WeightCaptureContext"
 
 import classes from './styles.module.scss'
 
 const WeightCapture = () => {
   const [index, setIndex] = useState(1)
-  const { weightData } = useContext(WeightContext)
+  const { setWeightCaptureData } = useContext(WeightCaptureContext)
+  const { weightData, setWeightData } = useContext(WeightContext)
   const router = useRouter()
 
   const handleAdd = () => {
@@ -26,15 +28,21 @@ const WeightCapture = () => {
   }
 
   const handleCapture = () => {
-
+    if (weightData !== 0) {
+    setIndex(1)
+    setWeightCaptureData(prevCapture => [...prevCapture, {hu: index, weight: weightData}])
+    } else {
+      alert('Cannot capture weight of 0')
+    }
   }
 
   const handleComplete = () => {
-    router.push('/')
+    setWeightCaptureData([])
+    // router.push('/')
   }
 
-  const handleDimension = () => {
-    // not in use
+  const handleRandom = () => {
+    setWeightData(Math.floor(Math.random() * 5000) + 1)
   }
 
   return (
@@ -51,7 +59,7 @@ const WeightCapture = () => {
         <span>{weightData}</span>
         <button onClick={handleCapture}>Capture</button>
         <button onClick={handleComplete}>Complete</button>
-        <button onClick={handleDimension}>Dimension</button>
+        <button onClick={handleRandom}>Random Weight</button>
       </div>
     </main>
   )

@@ -1,16 +1,19 @@
 import { UserProvider } from "../UserContext"
 import { WeightProvider } from "../WeightContext"
 import { CurrentProProvider } from "../CurrentProContext"
+import { PreviousProProvider } from "../PreviousProContext"
 
 const Providers = ({ children }) => {
   return (
-    <UserProvider>
-      <WeightProvider>
-        <CurrentProProvider>
-          {children}
-        </CurrentProProvider>
-      </WeightProvider>
-    </UserProvider>
+    <PreviousProProvider>
+      <UserProvider>
+        <WeightProvider>
+          <CurrentProProvider>
+            {children}
+          </CurrentProProvider>
+        </WeightProvider>
+      </UserProvider>
+    </PreviousProProvider>
   )
 }
 

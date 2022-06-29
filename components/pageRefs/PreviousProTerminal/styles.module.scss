@@ -1,0 +1,42 @@
+.container {
+    width: 96vw;
+    height: 94vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    button:active {
+        border: 3px inset lightgray;
+        background-color: green;
+    }
+}
+.proButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    h2 {
+        font-size: 42px;
+    }
+    button {
+        background-color: lightgray;
+        border-radius: 0.6rem;
+        border: 2px outset;
+        font-size: 180%;
+        width: 450px;
+        height: 68px;
+        font-weight: bold;
+    }
+}
+.cancel {
+    align-self: flex-end;
+    button {
+        background-color: green;
+        border-radius: 0.6rem;
+        border: 2px outset;
+        font-size: 180%;
+        width: 200px;
+        height: 80px;
+        font-weight: bold;
+    }
+}
