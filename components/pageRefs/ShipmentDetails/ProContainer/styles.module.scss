@@ -1,7 +1,10 @@
 .container {
+    display: flex;
+    flex-direction: column;
     border: 1px solid white;
     border-radius: 0.7rem;
     padding: 1rem;
+    align-items: center;
     h2 {
         font-size: 35px;
     }

@@ -1,4 +1,6 @@
 .container {
+    width: 96vw;
+    height: 93vh;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -6,4 +8,12 @@
         border: 3px inset;
         background-color: green;
     }
+}
+.leftContainer {
+    display: grid;
+    grid-template-rows: 2fr 1fr 2fr;
+}
+.rightContainer {
+    display: grid;
+    grid-template-rows: 13rem 1fr 5rem;
 }

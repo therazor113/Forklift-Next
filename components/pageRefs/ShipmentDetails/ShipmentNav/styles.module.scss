@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    button {
+        background-color: green;
+        border-radius: 0.6rem;
+        border: 2px outset;
+        font-size: 180%;
+        width: 200px;
+        height: 80px;
+        font-weight: bold;
+    }
+}
