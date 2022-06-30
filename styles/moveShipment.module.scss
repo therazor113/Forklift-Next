@@ -1,0 +1,13 @@
+.container {
+    width: 96vw;
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+}
+.actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 5vh;
+    align-items: center;
+}

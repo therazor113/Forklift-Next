@@ -4,11 +4,11 @@ import HeaderComponent from '../HeaderComponent'
 
 import classes from './styles.module.scss'
 
-const Layout = ({ children, titleID, titleExtra, style }) => {
+const Layout = ({ children, titleID, titleExtra, style, style2 }) => {
   return (
     <div style={style} className={classes.container}>
       <HeadComponent />
-      <HeaderComponent style={style} titleID={titleID} titleExtra={titleExtra}/>
+      <HeaderComponent style={style} style2={style2} titleID={titleID} titleExtra={titleExtra}/>
       <main className={classes.main}>
         {children}
       </main>

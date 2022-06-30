@@ -14,7 +14,7 @@ const ProInformation = () => {
       <h2>Wgt: <span>{currentPro.weight}</span></h2>
       <h2>Dim#: <span>{currentPro.dim}</span></h2>
       </div>
-      <h2>Load Door: <span>{currentPro.loadDoor}</span></h2>
+      <h2>Load Door: <span>{currentPro.dest}</span></h2>
       <h2>Drop#: <span>{currentPro.drop}</span></h2>
     </main>
   )

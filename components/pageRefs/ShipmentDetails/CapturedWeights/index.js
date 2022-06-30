@@ -1,14 +1,29 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import WeightCaptureContext from "../../../context/WeightCaptureContext"
 
 import classes from './styles.module.scss'
 
 const CapturedWeights = () => {
-  const { weightCaptureData, setWeightCaptureData } = useContext(WeightCaptureContext)
+  const { weightCaptureData } = useContext(WeightCaptureContext)
+  const [weightTotal, setWeightTotal] = useState(0)
+  const [huTotal, setHuTotal] = useState(0)
 
   const handleAbort = () => {
-    console.log(weightCaptureData)
+
   }
+
+  useEffect(() => {
+    if (weightCaptureData.length == 0) {
+      setHuTotal(0)
+      setWeightTotal(0)
+    } else {
+      setHuTotal(weightCaptureData.map(i=>i.hu).reduce((a,b)=>a+b))
+      setWeightTotal(weightCaptureData.map(i=>i.weight).reduce((a,b)=>a+b))
+    }
+    
+  }, [weightCaptureData])
+
+
   return (
     <main className={classes.container}>
       <div className={classes.weightFunction}>
@@ -31,7 +46,7 @@ const CapturedWeights = () => {
           </div>
         </div>
       </div>
-      <h2>Total: 1 <span>NULL</span></h2>
+      <h2>Total: {huTotal} <span>{weightTotal}</span></h2>
     </main>
   )
 }

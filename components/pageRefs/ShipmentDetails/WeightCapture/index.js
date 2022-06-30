@@ -22,15 +22,13 @@ const WeightCapture = () => {
   }
 
   const handleHuKeypad = () => { // not used yet
-    return (
-      <button>Bruh</button>
-    )
+    
   }
 
   const handleCapture = () => {
     if (weightData !== 0) {
     setIndex(1)
-    setWeightCaptureData(prevCapture => [...prevCapture, {hu: index, weight: weightData}])
+    setWeightCaptureData(prevCapture => [...prevCapture, {hu: index, weight: weightData}], )
     } else {
       alert('Cannot capture weight of 0')
     }
@@ -42,7 +40,7 @@ const WeightCapture = () => {
   }
 
   const handleRandom = () => {
-    setWeightData(Math.floor(Math.random() * 5000) + 1)
+    setWeightData(Math.round(Math.random() * 500) * 5)
   }
 
   return (
