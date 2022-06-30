@@ -7,6 +7,7 @@ import classes from './styles.module.scss'
 
 const ProContainer = () => {
   const {currentPro} = useContext(CurrentProContext)
+
   return (
     <main className={classes.container}>
       <h2>Pro: <span>{currentPro.proNumber}</span></h2>

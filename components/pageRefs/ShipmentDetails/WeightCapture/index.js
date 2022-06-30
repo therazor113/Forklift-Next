@@ -28,7 +28,7 @@ const WeightCapture = () => {
   const handleCapture = () => {
     if (weightData !== 0) {
     setIndex(1)
-    setWeightCaptureData(prevCapture => [...prevCapture, {hu: index, weight: weightData}], )
+    setWeightCaptureData(prevCapture => [...prevCapture, {hu: index, weight: weightData}])
     } else {
       alert('Cannot capture weight of 0')
     }
@@ -36,7 +36,8 @@ const WeightCapture = () => {
 
   const handleComplete = () => {
     setWeightCaptureData([])
-    // router.push('/')
+    // update pro api data with new weights and hu's (maybe store the old data else where)
+    router.push('/moveShipment')
   }
 
   const handleRandom = () => {

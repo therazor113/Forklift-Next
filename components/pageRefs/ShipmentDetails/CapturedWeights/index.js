@@ -1,28 +1,32 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useState, useRef } from "react"
 import WeightCaptureContext from "../../../context/WeightCaptureContext"
 
 import classes from './styles.module.scss'
 
 const CapturedWeights = () => {
-  const { weightCaptureData } = useContext(WeightCaptureContext)
+  const { weightCaptureData, setWeightCaptureData } = useContext(WeightCaptureContext)
   const [weightTotal, setWeightTotal] = useState(0)
   const [huTotal, setHuTotal] = useState(0)
-
-  const handleAbort = () => {
-
-  }
 
   useEffect(() => {
     if (weightCaptureData.length == 0) {
       setHuTotal(0)
       setWeightTotal(0)
     } else {
-      setHuTotal(weightCaptureData.map(i=>i.hu).reduce((a,b)=>a+b))
-      setWeightTotal(weightCaptureData.map(i=>i.weight).reduce((a,b)=>a+b))
+      setHuTotal(weightCaptureData.map(i=>i.hu).reduce((x,y)=>x+y))
+      setWeightTotal(weightCaptureData.map(i=>i.weight).reduce((x,y)=>x+y))
     }
     
   }, [weightCaptureData])
 
+  
+  const handleAbort = () => {
+    setWeightCaptureData([])
+  }
+
+  const handleDelete = () => {
+    
+  }
 
   return (
     <main className={classes.container}>
@@ -42,7 +46,7 @@ const CapturedWeights = () => {
           </div>
           <div className={classes.selectFunction}>
             <button onClick={handleAbort}>Abort All</button>
-            <button>Delete Selected</button>
+            <button onClick={handleDelete}>Delete Selected</button>
           </div>
         </div>
       </div>

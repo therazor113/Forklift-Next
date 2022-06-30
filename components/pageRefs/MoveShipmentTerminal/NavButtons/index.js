@@ -1,5 +1,5 @@
 import { useRouter } from "next/router"
-import ManifestButton from "../../../utilities/ManifestButton"
+import LiveGreenSheetButton from "../../../utilities/LiveGreenSheetButton"
 import ManualProButton from "../../../utilities/ManualProButton"
 
 import classes from './styles.module.scss'
@@ -17,7 +17,7 @@ const NavButtons = () => {
 
   return (
     <main className={classes.container}>
-      <ManifestButton title={'LIVE GREEN SHEET'} />
+      <LiveGreenSheetButton title={'LIVE GREEN SHEET'} />
       <ManualProButton title={'MANUAL PRO ENTRY'}/>
       <button onClick={handleReweigh}>REWEIGH</button>
       <button

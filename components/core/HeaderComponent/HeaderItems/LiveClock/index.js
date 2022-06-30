@@ -9,7 +9,7 @@ class LiveClock extends Component {
   componentDidMount() {
     this.timerID = setInterval(
       () => this.tick(),
-      1000
+      500
     )
   }
 

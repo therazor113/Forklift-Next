@@ -20,7 +20,7 @@ const WorkName = () => {
       </div>
       <h2>There is no assignment available. Please see your Supervisor <br/> or click RETRY</h2>
       <div className={classes.navButtons}>
-        <LiveGreenSheetButton />
+        <LiveGreenSheetButton title={'Live Green Sheet'} />
         <ManualProButton title={'MANUAL PRO ENTRY'} />
       </div>
     </main>

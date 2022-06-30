@@ -1,14 +1,14 @@
 import { useRouter } from 'next/router'
 
-const LiveGreenSheetButton = () => {
+const LiveGreenSheetButton = ({ title }) => {
   const router = useRouter()
 
   const handleClick = () => {
-    router.push('/liveManifest')
+    router.push('/liveGreenSheet')
   }
 
   return (
-    <button onClick={handleClick}>Live Green Sheet</button>
+    <button onClick={handleClick}>{title}</button>
   )
 }
 
