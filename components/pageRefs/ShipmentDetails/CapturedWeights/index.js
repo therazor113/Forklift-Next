@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState, useRef } from "react"
+import { useContext, useEffect, useState } from "react"
 import WeightCaptureContext from "../../../context/WeightCaptureContext"
 
 import classes from './styles.module.scss'
