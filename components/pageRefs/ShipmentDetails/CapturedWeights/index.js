@@ -8,7 +8,6 @@ const CapturedWeights = ({}) => {
   const [weightTotal, setWeightTotal] = useState(0)
   const [huTotal, setHuTotal] = useState(0)
   const [select, setSelect] = useState(1)
-  const [status, setStatus] = useState()
 
 
   useEffect(() => {
@@ -19,7 +18,6 @@ const CapturedWeights = ({}) => {
       setHuTotal(weightCaptureData.map(i=>i.hu).reduce((x,y)=>x+y))
       setWeightTotal(weightCaptureData.map(i=>i.weight).reduce((x,y)=>x+y))
     }
-    
   }, [weightCaptureData])
 
   useEffect(() => {
@@ -46,6 +44,10 @@ const CapturedWeights = ({}) => {
 
   const handleDelete = () => {
     if (weightCaptureData.length == 0) return
+
+    if (weightCaptureData[weightCaptureData.length - 1].id == select && weightCaptureData.length !== 1) {
+      setSelect(val => val - 1)
+    }
     setWeightCaptureData(weightCaptureData.filter((list) => list.id !== select))
   }
 
@@ -55,8 +57,7 @@ const CapturedWeights = ({}) => {
         <ul>
           {weightCaptureData.map((data, index) => (
             <li 
-            className={data == status ? classes.selected : ''}
-            onClick={() => setStatus(data)}
+            className={data.id == select ? classes.selected : ''}
             key={`capture-${index}`}
             >
               {data.hu} &nbsp;

@@ -12,6 +12,10 @@
         list-style: none;
         font-size: 45px;
         grid-column: 1 / 1;
+        white-space: nowrap;
+        overflow: auto;
+        overflow-x: hidden;
+        padding-right: 1rem;
         li {
             text-align: start;
             text-decoration: underline;
