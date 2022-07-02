@@ -3,9 +3,11 @@ import PreviousProTerminal from '../components/pageRefs/PreviousProTerminal'
 
 const previousPro = () => {
 
-
   return (
-    <Layout titleID={'Previous Pro List:'} style={{backgroundColor: 'rgb(25, 25, 200)', color: 'white'}}>
+    <Layout 
+    titleID={'Previous Pro List:'}
+    style={{backgroundColor: 'rgb(25, 25, 200)', color: 'white'}}
+    >
       <PreviousProTerminal />
     </Layout>
   )

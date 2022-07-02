@@ -1,9 +1,13 @@
 import Layout from '../components/core/Layout'
+import LiveGreenSheetTerminal from '../components/pageRefs/LiveGreenSheet'
 
 const liveGreenSheet = () => {
   return (
-    <Layout style={{backgroundColor: 'white', color: 'black'}}>
-      <h2>Live Green Sheet</h2>
+    <Layout
+    titleID={'Live Green Sheet'}
+    style={{backgroundColor: 'white', color: 'black'}}
+    >
+      <LiveGreenSheetTerminal />
     </Layout>
   )
 }

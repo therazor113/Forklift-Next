@@ -3,7 +3,10 @@ import Layout from "../components/core/Layout"
 
 const workManifest = () => {
   return (
-    <Layout style={{backgroundColor: 'white', color: 'black'}}>
+    <Layout
+    titleID={'Live Manifest'}
+    style={{backgroundColor: 'white', color: 'black'}}
+    >
       <h2>Work Manifest</h2>
     </Layout>
   )

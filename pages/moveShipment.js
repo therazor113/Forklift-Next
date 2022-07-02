@@ -1,10 +1,10 @@
 import Layout from '../components/core/Layout'
 import HeaderButtons from '../components/pageRefs/MoveShipmentTerminal/HeaderButtons'
 import ActionButtons from '../components/pageRefs/MoveShipmentTerminal/ActionButtons'
-
-import classes from '../styles/moveShipment.module.scss'
 import ProInformation from '../components/pageRefs/MoveShipmentTerminal/ProInformation'
 import NavButtons from '../components/pageRefs/MoveShipmentTerminal/NavButtons'
+
+import classes from '../styles/moveShipment.module.scss'
 
 const moveShipment = () => {
   return (

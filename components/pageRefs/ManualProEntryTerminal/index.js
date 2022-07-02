@@ -19,7 +19,6 @@ const ManualProEntryTerminal = () => {
     const data = await res.json()
     setCurrentPro(data)
     setPreviousProData(prevData => [...prevData, data])
-    console.log(data)
     router.push('/shipmentDetails')
     } catch {
       console.log('Error')

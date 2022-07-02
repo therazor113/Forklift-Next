@@ -8,7 +8,7 @@ import classes from '../styles/survey.module.scss'
 const loginSurvey = () => {
   return (
     <Layout 
-    titleID='Survey:'
+    titleID={'Login Survey:'}
     style={{backgroundColor: 'rgb(25, 25, 200)'}}
     >
       <div className={classes.container}>

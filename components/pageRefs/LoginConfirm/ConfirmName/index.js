@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import UserContext from '../../../context/UserContext'
 
-import classes from '../styles.module.scss'
+import classes from './styles.module.scss'
 
 const ConfirmName = () => {
 

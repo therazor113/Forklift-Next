@@ -4,8 +4,8 @@ import IndexTerminal from '../components/pageRefs/IndexTerminal'
 const Home = () => {
   return (
 			<Layout 
-			titleID='Login:' 
-			titleExtra='Build#: 000000-0000P' 
+			titleID={'Login:'}
+			titleExtra={'Build#: 000000-0000P'} 
 			style={{backgroundColor: 'rgb(25, 25, 200)'}}
 			>
 				<IndexTerminal />

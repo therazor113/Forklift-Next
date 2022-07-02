@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useRouter } from 'next/router'
 import ConfirmCheckBox from '../ConfirmCheckBox'
 
-import classes from '../styles.module.scss'
+import classes from './styles.module.scss'
 
 const ConfirmButtons = () => {
   const [route, setRoute] = useState('/loginSurvey')
