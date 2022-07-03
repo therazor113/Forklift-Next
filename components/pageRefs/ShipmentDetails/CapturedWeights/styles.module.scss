@@ -14,8 +14,9 @@
         grid-column: 1 / 1;
         white-space: nowrap;
         overflow: auto;
-        overflow-x: hidden;
+        overflow: hidden;
         padding-right: 1rem;
+        height: 600px;
         li {
             text-align: start;
             text-decoration: underline;
@@ -35,6 +36,13 @@
     display: flex;
     justify-content: space-between;
     gap: 2rem;
+    div {
+        text-align: center;
+        h2 {
+            height: 40px;
+            margin-left: 20px;
+        }
+    }
 }
 .buttons {
     grid-column: 2 / 2;
@@ -74,5 +82,7 @@
 
 .selected {
     color: black;
+    span {
     background-color: yellow;
+    }
 }
