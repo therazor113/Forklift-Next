@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react"
 import CancelButton from "../../CancelButton"
 import Key from "../Key"
 
+// Keypad array types
 const letterArray = [
   ['_'],
   ['A', 'B', 'C'],
@@ -22,39 +23,46 @@ const numberArray = [
   [''], ['0'], ['']
 ]
 
-const Keys = ({ inputRef, setInput, onEnter, classes }) => {
+const Keys = ({ inputValue, setInputValue, onEnter, classes }) => {
   const [currentKey, setCurrentKey] = useState(null)
   const [{ keyName, keyArray }, setKey] = useState({ keyName: true, keyArray: true })
   const timerRef = useRef()
 
+// Resets Timer => Resets currentKey
   const keyResetTimer = () => {
     timerRef.current = setTimeout(() => {setCurrentKey(null)}, 650);
   }
 
+// Ends Timer on unmount
   useEffect(() => {
     return () => clearTimeout(timerRef.current)
   }, []);
 
-  const handleClick = ( inputValue, keyId ) => {
+  const handleClick = ( keyValue, keyId ) => {
     clearTimeout(timerRef.current)
-    if (inputRef.current.value.length >= 20) return
+  // Return if input.length > 20
+    if (inputValue.length >= 20) return
+    // sets currentKey to key clicked
 	  setCurrentKey(keyId)
-    if (keyId == currentKey && isNaN(inputRef.current.value.slice(-1)) && inputValue.length == 1 && inputValue !== '_') {
-      inputRef.current.value = inputRef.current.value.slice(0, -1) + inputValue
+  // If key clicked == currentKey && previous key is a letter && keyValue == 1
+    if (keyId == currentKey && isNaN(inputValue.slice(-1)) && keyValue !== '_' && keyValue.length == 1 ) {
+    // Replace current letter with next letter on button clicked
+    setInputValue(inputValue.slice(0, -1) + keyValue)
     } else {
-      inputRef.current.value += inputValue
+    // Add first character on button click
+      setInputValue(inputValue += keyValue)
     }
-    setInput(inputRef.current.value)
     keyResetTimer()
   }
 
+// Swap keypad - Swaps button title && keyArray type
   const handleChangeKeys = () => {
     setKey(changeKey => ({ keyName : !changeKey.keyName, keyArray: !changeKey.keyArray }))
   }
 
+// Back - Removes last character in input field && Sets input state to new value
   const handleBack = () => {
-    inputRef.current.value = inputRef.current.value.slice(0, -1)
-    setInput(inputRef.current.value)
+    setInputValue(inputValue.slice(0, -1))
   }
 
   return (

@@ -9,17 +9,26 @@
         color: white;
         border: 2px outset lightgray;
         font-size: 50px;
-        &:active {
-            border: 3px inset lightgray;
-        }
     }
 }
 .load {
-    background-color: green;
+    background-color: rgba(0, 128, 0, 0.95);
+    &:active {
+        border: 3px inset lightgray;
+        background-color: rgba(0, 128, 0, 1);
+    }
 }
 .dock {
-    background-color: red;
+    background-color: rgba(240, 0, 0, 0.9);
+    &:active {
+        border: 3px inset lightgray;
+        background-color: rgba(230, 0, 0, 1);
+    }
 }
 .write {
-    background-color: purple;
+    background-color: rgba(128, 0, 128, 0.95);
+    &:active {
+        border: 3px inset lightgray;
+        background-color: rgba(128, 0, 128, 1);
+    }
 }

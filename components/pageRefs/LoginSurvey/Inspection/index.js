@@ -8,6 +8,7 @@ const Inspection = () => {
   const router = useRouter()
 
   const handleYes = () => {
+  // if weightData = 0 => send to getWork
     if (weightData === 0) {
       router.push('/getWork')
     } else {

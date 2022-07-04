@@ -13,23 +13,28 @@ const WeightCapture = () => {
   const [showKeypad, setShowKeypad] = useState(false)
   const router = useRouter()
 
+// Capture Button
   const handleCapture = () => {
     if (weightData !== 0) {
+  // Reset hu #
     setIndex(1)
+  // Add weight and hu values to weightCaptureData
     setWeightCaptureData(prevCapture => 
       [...prevCapture, {hu: index, weight: weightData}]
     )
     } else {
+    // Send alert if weight is 0
       alert('Cannot capture weight of 0')
     }
   }
 
+// Complete - Send to moveShipment
   const handleComplete = () => {
-    setWeightCaptureData([])
-    // update pro data with new weights and hu's (maybe store the old data else where)
     router.push('/moveShipment')
   }
 
+// For weight change example
+// Random - sets weight value to a random numeber between 0-500 and rounds to nearest 5
   const handleRandom = () => {
     setWeightData(Math.round(Math.random() * 500) * 5)
   }

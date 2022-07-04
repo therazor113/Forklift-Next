@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import WeightContext from '../../context/WeightContext'
 
+// Sets current weight to 0
 const ZeroScale = () => {
   const { setWeightData } = useContext(WeightContext)
 

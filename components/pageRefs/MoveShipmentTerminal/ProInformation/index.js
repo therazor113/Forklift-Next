@@ -8,8 +8,11 @@ const ProInformation = () => {
   const { currentPro } = useContext(CurrentProContext)
   const router = useRouter()
 
+// Send to proDetails if available
   const handleClick = () => {
-    router.push('/proDetails')
+    if (currentPro.length !== 0) {
+      router.push('/proDetails')
+    }
   }
 
   return (

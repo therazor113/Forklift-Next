@@ -7,12 +7,13 @@ import classes from './styles.module.scss'
 const NavButtons = () => {
   const router = useRouter()
 
+// send to shipmentDetails
   const handleReweigh = () => {
     router.push('/shipmentDetails')
   }
 
   const handleDimension = () => {
-    // Disabled - Requires outside programs
+    // Disabled - Requires equipment
   }
 
   return (

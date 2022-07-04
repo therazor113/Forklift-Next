@@ -1,34 +1,19 @@
-import { useRef, useState, useContext } from 'react'
-import { useRouter } from 'next/router'
+import {useContext } from 'react'
 import CurrentProContext from '../../context/CurrentProContext'
 import PreviousProContext from '../../context/PreviousProContext'
 import Keys from '../../utilities/KeyPad/Keys'
+import useFetchInput from '../../hooks/useFetchInput'
 
 import classes from './styles.module.scss'
 
 const ManualProEntryTerminal = () => {
-  const [input, setInput] = useState(null)
   const { setPreviousProData } = useContext(PreviousProContext)
   const { setCurrentPro } = useContext(CurrentProContext)
-  const router = useRouter()
-  const inputRef = useRef()
+  const [inputValue, handleChange, handleEnter, setInputValue] = useFetchInput(
+    '', '/shipmentDetails', `api/ProNumberApi/[pros]/`, setCurrentPro, setPreviousProData
+  )
 
-  const handleEnter = async () => {
-    try {
-    const res = await fetch(`api/ProNumberApi/[pros]/${input}`)
-    const data = await res.json()
-    setCurrentPro(data)
-    setPreviousProData(prevData => [...prevData, data])
-    router.push('/shipmentDetails')
-    } catch {
-      console.log('Error')
-    }
-  }
-
-  const handleInput = () => {
-    setInput(inputRef.current.value)
-  }
-
+// Keyboard enter pressed
   const handleKeyUp = (e) => {
     if (e.key === 'Enter') {
       handleEnter()
@@ -40,12 +25,12 @@ const ManualProEntryTerminal = () => {
     <h1>Please enter a pro number</h1>
     <div className={classes.inputContainer}>
       <h2>Pro Number:</h2>
-      <input ref={inputRef} onChange={handleInput} onKeyUp={handleKeyUp} />
+      <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} />
     </div>
       <Keys
       classes={classes}
-      inputRef={inputRef}
-      setInput={setInput}
+      inputValue={inputValue}
+      setInputValue={setInputValue}
       onEnter={handleEnter}
       />
   </main>

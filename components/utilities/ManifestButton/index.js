@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 const ManifestButton = ({ title }) => {
   const router = useRouter()
 
+// Send to liveManifest if available
   const handleClick = () => {
     // if (CurrentManifestContext == []) return
     // else {router.push('/workManifest')}

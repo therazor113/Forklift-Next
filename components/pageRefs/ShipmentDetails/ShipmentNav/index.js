@@ -7,6 +7,7 @@ import classes from './styles.module.scss'
 const ShipmentNav = () => {
   const router = useRouter()
 
+// Send to moveShipment
   const handleClick = () => {
     router.push('/moveShipment')
   }

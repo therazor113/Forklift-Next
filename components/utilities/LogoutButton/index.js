@@ -10,6 +10,7 @@ const LogoutButton = ({ title }) => {
   const { setPreviousProData } = useContext(PreviousProContext)
   const router = useRouter()
 
+// Resets Contexts && Sends to login
   const handleClick = () => {
     setWeightData(3000)
     setCurrentPro([])

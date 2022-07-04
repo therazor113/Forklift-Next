@@ -1,5 +1,6 @@
 import { useRouter } from "next/router"
 
+// Sends to manualProEntry
 const ManualProButton = ({ title }) => {
   const router = useRouter()
   

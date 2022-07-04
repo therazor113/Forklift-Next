@@ -4,7 +4,8 @@ import CurrentProContext from '../../../context/CurrentProContext'
 import classes from './styles.module.scss'
 
 const ProInformation = () => {
-  const { currentPro } = useContext(CurrentProContext) // will use setCurrent later
+  const { currentPro } = useContext(CurrentProContext)
+
   return (
     <main className={classes.container}>
       <h2>SH: <span>{currentPro.shipper}</span></h2>

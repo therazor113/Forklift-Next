@@ -6,14 +6,17 @@ import classes from './styles.module.scss'
 const ActionButtons = () => {
   const { currentPro } = useContext(CurrentProContext)
 
+// Load - Open load keypad
   const handleLoad = () => {
-    //return (<keypad title={'Door Selection'} label={'Enter Door #:'}>)?
+    
   }
   
+// Dock - Open dock keypad
   const handleDock = () => {
-    //return (<keypad title={'Bay Selection'} label={'Enter Bay #:'}>)?
+    
   }
-  
+
+// Write on - send alert ~{will send write on data to api}
   const handleWrite = () => {
     alert(`PRO NUMBER ${currentPro.proNumber} HAS BEEN ENTERED INTO THE SYSTEM AS A WRITE ON!!!`)
   }

@@ -1,5 +1,5 @@
+// Sends a Prompt
 const ScaleNotWorking = () => {
-
   const handleClick = () => {
     // will replace with a prompt
     alert('Alert! If you continue your supervisor will be notified!')
