@@ -1,13 +1,16 @@
 import { useContext } from 'react'
+import { useRouter } from 'next/router'
 import CurrentProContext from '../../../context/CurrentProContext'
 
 import classes from './styles.module.scss'
 
 const ProInformation = () => {
   const { currentPro } = useContext(CurrentProContext)
+  const router = useRouter()
 
   const handleClick = () => {
     console.log(currentPro)
+    // router.push(/proNumberInfo)
   }
 
   return (

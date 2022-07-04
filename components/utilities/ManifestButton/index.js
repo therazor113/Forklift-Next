@@ -6,7 +6,7 @@ const ManifestButton = ({ title }) => {
   const handleClick = () => {
     // if (CurrentManifestContext == []) return
     // else {router.push('/workManifest')}
-    router.push('/workManifest')
+    router.push('/liveManifest')
   }
 
   return (

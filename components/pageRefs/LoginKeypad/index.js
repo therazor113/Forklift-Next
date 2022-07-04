@@ -20,7 +20,6 @@ const LoginKeypad = () => {
       const req = await fetch(`api/NamesApi/[users]/${input}`)
       const data = await req.json()
       setUserData(data)
-      console.log(data)
       router.push('/loginConfirm')
     } catch {
       console.log('error')

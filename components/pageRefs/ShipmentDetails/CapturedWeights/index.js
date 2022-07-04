@@ -21,10 +21,10 @@ const CapturedWeights = ({}) => {
       setHuTotal(weightCaptureData.map(i=>i.hu).reduce((x,y)=>x+y))
       setWeightTotal(weightCaptureData.map(i=>i.weight).reduce((x,y)=>x+y))
     }
-  }, [weightCaptureData])
-
-  useEffect(() => {
     weightCaptureData.forEach((item, i) => {item.id = i + 1})
+    if (weightCaptureData.length >= 10) {
+      setListBottom('* * * *')
+    }
   }, [weightCaptureData])
 
   useEffect(() => {
@@ -32,14 +32,34 @@ const CapturedWeights = ({}) => {
       objRef.current.scrollIntoView({block: 'nearest', inline: 'start'})
     } else if (select == 1) {
       scrollRef.current.scrollTop = 0
-    }
-
-    if (select >= 11) {
-      setListTop('* * * *')
-    } else if (select <= 11) {
-      setListTop('')
+    } else {
+      
     }
   }, [select])
+
+  useEffect(() => {
+    if (weightCaptureData.length == 0) return
+    if (select >= 11) {
+      setListTop('* * * *')
+    } else if (select == 1) {
+      setListTop('')
+    }
+
+    if (weightCaptureData.length <= 10) {
+      setListTop('')
+      setListBottom('')
+    }
+  }, [select, weightCaptureData])
+
+  useEffect(() => {
+    if (weightCaptureData.length >= 11) {
+      if (select == weightCaptureData[weightCaptureData.length - 1].id) {
+        setListBottom('')
+      } else if (select == weightCaptureData[weightCaptureData.length - 11].id) {
+        setListBottom('* * * *')
+      }
+    }
+  }, [select, weightCaptureData])
 
   const handleUp = () => {
     if (weightCaptureData.length == 0) return
@@ -57,11 +77,12 @@ const CapturedWeights = ({}) => {
   const handleAbort = () => {
     setWeightCaptureData([])
     setSelect(1)
+    setListBottom('')
+    setListTop('')
   }
 
   const handleDelete = () => {
     if (weightCaptureData.length == 0) return
-
     if (weightCaptureData[weightCaptureData.length - 1].id == select && weightCaptureData.length !== 1) {
       setSelect(val => val - 1)
     }
