@@ -1,12 +1,7 @@
 import { useState, useEffect, useRef } from "react"
-import Backspace from "../FunctionKeys/Backspace"
-import Cancel from "../FunctionKeys/Cancel"
-import ChangeKeys from "../FunctionKeys/ChangeKeys"
-import Enter from "../FunctionKeys/Enter"
-
+import CancelButton from "../../CancelButton"
 import Key from "../Key"
 
-// change this to only show certain buttons for current needs (remove large words buttons on login page)
 const letterArray = [
   ['_'],
   ['A', 'B', 'C'],
@@ -29,22 +24,11 @@ const numberArray = [
 
 const Keys = ({ inputRef, setInput, onEnter, classes }) => {
   const [currentKey, setCurrentKey] = useState(null)
-  const [keyType, setKeyType] = useState('ABC')
-  const [keyArray, setKeyArray] = useState(numberArray)
+  const [{ keyName, keyArray }, setKey] = useState({ keyName: true, keyArray: true })
   const timerRef = useRef()
 
   const keyResetTimer = () => {
     timerRef.current = setTimeout(() => {setCurrentKey(null)}, 650);
-  }
-
-  const handleCancel = () => {
-    setKeyType('ABC')
-    setKeyArray(numberArray)
-  }
-
-  const handleChangeKeys = () => {
-    setKeyType(val => val == 'ABC' ? '123' : 'ABC')
-    setKeyArray(val => val == numberArray ? letterArray : numberArray)
   }
 
   useEffect(() => {
@@ -64,25 +48,34 @@ const Keys = ({ inputRef, setInput, onEnter, classes }) => {
     keyResetTimer()
   }
 
+  const handleChangeKeys = () => {
+    setKey(changeKey => ({ keyName : !changeKey.keyName, keyArray: !changeKey.keyArray }))
+  }
+
+  const handleBack = () => {
+    inputRef.current.value = inputRef.current.value.slice(0, -1)
+    setInput(inputRef.current.value)
+  }
+
   return (
     <main className={classes.keypad}>
       <div className={classes.keypadKeys}>
-        {keyArray.map((keys, index) => (
+        {(keyArray ? numberArray : letterArray).map((keys, index) => (
           <Key
             key={`key-${index}`}
             id={index}
             currentKey={currentKey}
             onClick={handleClick}
-            keyType={keyType}
+            keyName={keyName}
             keys={keys}
             />
         ))}
       </div>
       <div className={classes.functionKeys}>
-        <Backspace inputRef={inputRef} setInput={setInput} />
-        <Enter onEnter={onEnter} />
-        <Cancel onCancel={handleCancel} />
-        <ChangeKeys onChangeKeys={handleChangeKeys} />
+        <button onClick={handleBack}>Back</button>
+        <button onClick={() => onEnter()}>Enter</button>
+        <CancelButton />
+        <button onClick={handleChangeKeys}>{keyName ? 'ABC' : '123'}</button>
       </div>
     </main>
   )

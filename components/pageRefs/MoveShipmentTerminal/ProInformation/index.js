@@ -9,8 +9,7 @@ const ProInformation = () => {
   const router = useRouter()
 
   const handleClick = () => {
-    console.log(currentPro)
-    // router.push(/proNumberInfo)
+    router.push('/proDetails')
   }
 
   return (

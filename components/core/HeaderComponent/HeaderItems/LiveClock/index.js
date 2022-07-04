@@ -7,25 +7,22 @@ class LiveClock extends Component {
   }
 
   componentDidMount() {
-    this.timerID = setInterval(
-      () => this.tick(),
-      500
-    )
+    this.timerID = setInterval(() => {this.tick(), 500})
   }
 
   componentWillUnmount() {
-    clearInterval(this.timerID);
+    clearInterval(this.timerID)
   }
 
   tick() {
-    this.setState({
-      date: new Date()
-    })
+    this.setState({date: new Date()})
   }
 
   render() {
     return (
-      <h2 suppressHydrationWarning>{this.state.date.toDateString() + " " + this.state.date.toLocaleTimeString()}</h2>
+      <h2 suppressHydrationWarning>
+        {this.state.date.toDateString() + " " + this.state.date.toLocaleTimeString()}
+      </h2>
     )
   }
 }

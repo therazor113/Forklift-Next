@@ -93,22 +93,22 @@ const CapturedWeights = ({}) => {
     <main className={classes.container}>
       <div className={classes.weightFunction}>
         <div>
-        <h2>{listTop}</h2>
-        <ul ref={scrollRef}>
-          {weightCaptureData.map((data, index) => (
-            <li
-            className={data.id == select ? classes.selected : ''}
-            ref={data.id == select ? objRef : null}
-            key={`capture-${index}`}
-            >
-              <span>
-              {data.hu} &nbsp;
-              {data.weight}
-              </span>
-              </li>
-          ))}
-        </ul>
-        <h2>{listBottom}</h2>
+          <h2>{listTop}</h2>
+          <ul ref={scrollRef}>
+            {weightCaptureData.map((data, index) => (
+              <li
+              className={data.id == select ? classes.selected : ''}
+              ref={data.id == select ? objRef : null}
+              key={`capture-${index}`}
+              >
+                <span>
+                {data.hu} &nbsp;
+                {data.weight}
+                </span>
+                </li>
+            ))}
+          </ul>
+          <h2>{listBottom}</h2>
         </div>
         <div className={classes.buttons}>
           <div className={classes.select}>

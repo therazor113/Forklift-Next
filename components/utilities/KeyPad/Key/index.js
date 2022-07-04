@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react"
-const Key = ({ keys, keyType, id, currentKey, onClick }) => {
+import { useState, useEffect } from 'react'
+
+const Key = ({ keys, keyName, id, currentKey, onClick }) => {
   const [index, setIndex] = useState(0)
 
   const handleClick = () => {
-    if (keyType == 'ABC') {
+    if (keyName == true) {
       onClick(keys, id)
       setIndex(0)
     } else {

@@ -4,11 +4,8 @@ import WeightContext from '../../context/WeightContext'
 const ZeroScale = () => {
   const { setWeightData } = useContext(WeightContext)
 
-  const handleClick = () => {
-    setWeightData(0)
-  }
   return (
-    <button onClick={handleClick}>Zero Scale</button>
+    <button onClick={() => setWeightData(0)}>Zero Scale</button>
   )
 }
 
