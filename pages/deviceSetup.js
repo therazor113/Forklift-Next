@@ -9,7 +9,7 @@ const deviceSetup = () => {
   return (
     <Layout 
     titleID={'Device Setup:'}
-    style={{backgroundColor: 'rgb(25, 25, 200)'}}
+    style={{backgroundColor: 'rgb(25, 50, 200)'}}
     >
       <main className={classes.container}>
         <div className={classes.editContainer}>

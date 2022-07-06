@@ -34,7 +34,7 @@ const WeightCapture = () => {
   }
 
 // For weight change example
-// Random - sets weight value to a random numeber between 0-500 and rounds to nearest 5
+// Random - sets weight value to a random number between 0-500*5
   const handleRandom = () => {
     setWeightData(Math.round(Math.random() * 500) * 5)
   }

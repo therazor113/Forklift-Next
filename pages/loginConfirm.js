@@ -6,7 +6,7 @@ const Confirm = () => {
   return (
     <Layout 
     titleID={'Login Confirmation:'} 
-    style={{backgroundColor: 'rgb(25, 25, 200)'}}
+    style={{backgroundColor: 'rgb(25, 50, 200)'}}
     >
       <ConfirmName />
       <ConfirmButtons />

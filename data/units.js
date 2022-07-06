@@ -20,7 +20,7 @@ export const units = [
     pieces: 7,
     weight: 500,
     dim: 'N/A',
-    dest: '135',
+    dest: '134',
     drop: 'N/A',
     dispatch: 'N/A',
     final: 'N/A',

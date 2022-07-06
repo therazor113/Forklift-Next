@@ -9,7 +9,7 @@ const loginSurvey = () => {
   return (
     <Layout 
     titleID={'Login Survey:'}
-    style={{backgroundColor: 'rgb(25, 25, 200)'}}
+    style={{backgroundColor: 'rgb(25, 50, 200)'}}
     >
       <div className={classes.container}>
       <WeightCheck />

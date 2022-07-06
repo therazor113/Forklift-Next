@@ -6,7 +6,7 @@ const previousPro = () => {
   return (
     <Layout 
     titleID={'Previous Pro List:'}
-    style={{backgroundColor: 'rgb(25, 25, 200)', color: 'white'}}
+    style={{backgroundColor: 'rgb(25, 50, 200)', color: 'white'}}
     >
       <PreviousProTerminal />
     </Layout>

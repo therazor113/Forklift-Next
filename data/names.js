@@ -12,6 +12,6 @@ export const names = [
   {
     id: 345,
     first: 'Joe',
-    last: 'Joey'
+    last: 'Joy'
   }
 ]
