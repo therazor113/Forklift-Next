@@ -2,15 +2,16 @@ import { useState, useContext } from "react"
 import { useRouter } from 'next/router'
 import WeightContext from "../../../context/WeightContext"
 import WeightCaptureContext from "../../../context/WeightCaptureContext"
-import Keys from '../../../utilities/KeyPad/Keys'
+import useEditInput from '../../../hooks/useEditInput'
 
 import classes from './styles.module.scss'
 
 const WeightCapture = () => {
   const { setWeightCaptureData } = useContext(WeightCaptureContext)
   const { weightData, setWeightData } = useContext(WeightContext)
+  const { inputValue, handleChange } = useEditInput({ hu: 0 }) // TODO
   const [index, setIndex] = useState(1)
-  const [showKeypad, setShowKeypad] = useState(false)
+  const [showInput, setShowInput] = useState(false)
   const router = useRouter()
 
 // Capture Button
@@ -41,14 +42,13 @@ const WeightCapture = () => {
 
   return (
     <main className={classes.container}>
-      {showKeypad && <Keys classes={classes} />}
       <div className={classes.huDiv}>
         <h2>HU: <span>{index}</span></h2>
         <div className={classes.increment}>
           <button onClick={() => setIndex(i => i + 1 >= 99 ? 99 : i + 1)}>+</button>
           <button onClick={() => setIndex(i => i - 1 <= 1 ? 1 : i - 1)}>&minus;</button>
         </div>
-        <button onClick={() => setShowKeypad(!showKeypad)}>&#x2328;</button>
+        <button onClick={() => setShowInput(!showInput)}>&#x2328;</button>
       </div>
       <div className={classes.captureButtons}>
         <span>{weightData}</span>
