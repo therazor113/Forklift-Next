@@ -25,7 +25,6 @@ const ManualProEntryTerminal = () => {
       setCurrentPro(data)
       setPreviousProData(prevData => [...prevData, data])
       router.push('/shipmentDetails')
-      console.log(data)
     }
   }, [data, setPreviousProData, setCurrentPro, router])
 

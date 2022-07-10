@@ -23,7 +23,6 @@ const LoginKeypad = () => {
     if (data) {
       setUserData(data)
       router.push('/loginConfirm')
-      console.log(data)
     }
   }, [data, setUserData, router])
 // Keyboard enter pressed
