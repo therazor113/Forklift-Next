@@ -1,4 +1,5 @@
-import {useContext } from 'react'
+import { useContext, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import CurrentProContext from '../../context/CurrentProContext'
 import PreviousProContext from '../../context/PreviousProContext'
 import Keys from '../../utilities/KeyPad/Keys'
@@ -7,11 +8,26 @@ import useFetchInput from '../../hooks/useFetchInput'
 import classes from './styles.module.scss'
 
 const ManualProEntryTerminal = () => {
+  const router = useRouter()
   const { setPreviousProData } = useContext(PreviousProContext)
   const { setCurrentPro } = useContext(CurrentProContext)
-  const [inputValue, handleChange, handleEnter, setInputValue] = useFetchInput(
-    '', '/shipmentDetails', `api/ProNumberApi/[pros]/`, setCurrentPro, setPreviousProData
-  )
+  const [
+    inputValue,
+    handleChange,
+    handleEnter,
+    setInputValue,
+    data
+  ] = useFetchInput('', `api/ProNumberApi/[pros]/`)
+
+// Contexts when data changes
+  useEffect(() => {
+    if (data) {
+      setCurrentPro(data)
+      setPreviousProData(prevData => [...prevData, data])
+      router.push('/shipmentDetails')
+      console.log(data)
+    }
+  }, [data, setPreviousProData, setCurrentPro, router])
 
 // Keyboard enter pressed
   const handleKeyUp = (e) => {
