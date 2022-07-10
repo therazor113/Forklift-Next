@@ -1,16 +1,31 @@
-import { useContext} from "react"
+import { useContext, useEffect} from "react"
+import { useRouter } from 'next/router'
 import UserContext from "../../context/UserContext"
 import Keys from '../../utilities/KeyPad/Keys'
 import useFetchInput from '../../hooks/useFetchInput'
 
+
 import classes from './styles.module.scss'
 
 const LoginKeypad = () => {
+  const router = useRouter()
   const { setUserData } = useContext(UserContext)
-  const [inputValue, handleChange, handleEnter, setInputValue] = useFetchInput(
-    '', '/loginConfirm', `api/NamesApi/[users]/`, setUserData
-  )
+  const [
+    inputValue,
+    handleChange,
+    handleEnter,
+    setInputValue,
+    data
+  ] = useFetchInput('', `api/NamesApi/[users]/`)
 
+// setUserData when data changes
+  useEffect(() => {
+    if (data) {
+      setUserData(data)
+      router.push('/loginConfirm')
+      console.log(data)
+    }
+  }, [data, setUserData, router])
 // Keyboard enter pressed
   const handleKeyUp = (e) => {
     if (e.key === 'Enter') {
