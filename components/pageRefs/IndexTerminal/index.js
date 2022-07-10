@@ -1,42 +1,43 @@
-import Link from 'next/link'
-import classes from './styles.module.scss'
+import { useContext, useEffect } from "react"
 import { useRouter } from 'next/router'
-import { useContext, useState, useRef } from "react"
+import Link from "next/link"
 import UserContext from "../../context/UserContext"
+import useFetchInput from '../../hooks/useFetchInput'
+
+import classes from './styles.module.scss'
 
 
 const IndexTerminal = () => {
   const { setUserData } = useContext(UserContext)
-  const [input, setInput] = useState(null)
-  const inputRef = useRef()
   const router = useRouter()
+  const [
+    inputValue,
+    handleChange,
+    handleEnter,
+    setInputValue,
+    data
+  ] = useFetchInput('', `api/NamesApi/[users]/`)
 
-  const handleInput = () => {
-    setInput(inputRef.current.value)
-	}
-
-  const handleEnter = async () => {
-    try {
-      const req = await fetch(`api/NamesApi/[users]/${input}`)
-      const data = await req.json()
+// setUserData when data changes
+  useEffect(() => {
+    if (data) {
       setUserData(data)
       router.push('/loginConfirm')
-    } catch {
-      console.log('error')
     }
-  }
-
+  }, [data, setUserData, router])
+// Keyboard enter pressed
   const handleKeyUp = (e) => {
     if (e.key === 'Enter') {
       handleEnter()
     }
   }
+
   return (
   <main className={classes.login}>
     <h1>Welcome, please scan your badge</h1>
     <div className={classes.inputContainer}>
       <h2>Badge ID: </h2>
-      <input ref={inputRef} onChange={handleInput} onKeyUp={handleKeyUp} />
+      <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} />
       <Link href={'/loginKeypad'}>
         <button>&#x2328;</button>
       </Link>
