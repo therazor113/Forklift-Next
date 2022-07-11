@@ -1,8 +1,7 @@
 import { useContext, useEffect, useState, useRef } from 'react'
 import WeightCaptureContext from '../../../context/WeightCaptureContext'
-import { SetWeightId } from './SetWeightId'
+import { SetTotal } from './SetTotal'
 import { WeightListActive } from './WeightListActive'
-import { weightScroll } from './WeightScroll'
 import DeleteSelected from './DeleteSelected'
 import SelectButtons from './SelectButtons'
 
@@ -14,24 +13,25 @@ const CapturedWeights = ({}) => {
   const [count, setCount] = useState(0)
   const [listTop, setListTop] = useState('')
   const [listBottom, setListBottom] = useState('')
-  const [select, setSelect] = useState(1)
+  const [select, setSelect] = useState(0)
   const scrollRef = useRef()
   const objRef = useRef()
 
-// if weightCaptureData increases change select to last in array
+  
+// If weightCaptureData increases change select to last in array
   useEffect(() => {
-    if (count == 0 || count == 1) return
-      setSelect(weightCaptureData[weightCaptureData.length - 1].id)
+    if (count === 0 || count === 1) return
+    setSelect(weightCaptureData.length - 1)
   }, [count, weightCaptureData])
 
-// Replace weight Ids when table changes && set Total hu/weight
+// Set Total hu/weight & increment count
   useEffect(() => {
-    SetWeightId(weightCaptureData, setTotal, setCount)
+    SetTotal(weightCaptureData, setTotal, setCount)
   }, [weightCaptureData])
   
 // Scroll to weight selected into view
   useEffect(() => {
-    weightScroll(scrollRef, objRef, select)
+    objRef.current?.scrollIntoView({block: 'nearest', inline: 'start'})
   }, [select])
 
 // Adding and removing '* * * *' when necessary
@@ -42,7 +42,7 @@ const CapturedWeights = ({}) => {
 // Abort - Reset all values to default
   const handleAbort = () => {
     setWeightCaptureData([])
-    setSelect(1)
+    setSelect(0)
     setListBottom('')
     setListTop('')
     setCount(0)
@@ -56,8 +56,8 @@ const CapturedWeights = ({}) => {
           <ul ref={scrollRef}>
             {weightCaptureData.map((data, index) => (
               <li
-              className={data.id == select ? classes.selected : ''}
-              ref={data.id == select ? objRef : null}
+              className={index == select ? classes.selected : ''}
+              ref={index == select ? objRef : null}
               key={`capture-${index}`}
               >
                 <span>

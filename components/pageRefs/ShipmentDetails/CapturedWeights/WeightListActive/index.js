@@ -1,6 +1,6 @@
 export const WeightListActive = (scroll, setTop, setBottom) => {
   const top = scroll.current.scrollTop
-  const height = scroll.current.scrollHeight - 600
+  const height = scroll.current.scrollHeight - scroll.current?.offsetHeight
 // Add '* * * *' when top weight is not !visible
   if (top !== 0) {
     setTop('* * * *')

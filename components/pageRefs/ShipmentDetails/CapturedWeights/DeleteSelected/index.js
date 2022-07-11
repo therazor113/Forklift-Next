@@ -1,15 +1,16 @@
 const DeleteSelected = ({data, setData, setCount, setSelect, select}) => {
-
   const handleDelete = () => {
-    if (data.length == 0) return
-  // If selected weight is the lowest in list && list !contain 1 weight
-    if (data[data.length - 1].id == select && data.length !== 1) {
-    // select upper weight capture
-      setSelect(val => val - 1)
+    if (!data.length) return
+  // If selected weight is the lowest in list && list !contain 1 weight => Select upper weight
+    if (data.length - 1 == select) {
+      setSelect(val => val - 1 <= 0 ? 0 : val - 1)
     }
-    // Filter selected weight by id and remove it
-      setData(data.filter((list) => list.id !== select))
-      setCount(0)
+  // Create temp array => delete selected => setData to newList
+    const newList = [...data]
+    newList.splice(select, 1)
+    setData(newList)
+  // Reset count
+    setCount(0)
     }
 
   return (
