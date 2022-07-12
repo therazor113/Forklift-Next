@@ -12,7 +12,7 @@ const EditInformation = ({ submit, edit }) => {
     fork: initialFork !== null ? initialFork : '',
     scale: initialScale !== null ? initialScale : ''
   })
-  const [{a, b, c, d}, setShow] = useState({a: false, b: false, c: false, d: true})
+  const [{a, b, c, d}, setShow] = useState({a: false, b: false, c: false, d: false})
   const setLocalStorage = useRef(() => {})
 
   useEffect(() => {
