@@ -1,9 +1,5 @@
 import Layout from '../components/core/Layout'
-import EditInformation from '../components/pageRefs/DeviceSetup/EditInformation'
-import NavButtons from '../components/pageRefs/DeviceSetup/NavButtons'
-import SelectButtons from '../components/pageRefs/DeviceSetup/SelectButtons'
-
-import classes from '../styles/deviceSetup.module.scss'
+import DeviceSetupTerminal from '../components/pageRefs/DeviceSetup/DeviceSetupTerminal'
 
 const deviceSetup = () => {
   return (
@@ -11,13 +7,7 @@ const deviceSetup = () => {
     titleID={'Device Setup:'}
     style={{backgroundColor: 'rgb(25, 50, 200)'}}
     >
-      <main className={classes.container}>
-        <div className={classes.editContainer}>
-          <EditInformation />
-          <SelectButtons />
-        </div>
-          <NavButtons />
-      </main>
+      <DeviceSetupTerminal />
     </Layout>
   )
 }
