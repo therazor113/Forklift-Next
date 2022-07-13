@@ -1,14 +1,16 @@
 import { useContext } from 'react'
+import { useRouter } from 'next/router'
 import CurrentProContext from '../../../context/CurrentProContext'
 
 import classes from './styles.module.scss'
 
 const ActionButtons = () => {
   const { currentPro } = useContext(CurrentProContext)
+  const router = useRouter()
 
 // Load - Open load keypad
   const handleLoad = () => {
-    
+    router.push('/workComplete')
   }
   
 // Dock - Open dock keypad
