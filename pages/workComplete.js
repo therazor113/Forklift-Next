@@ -1,9 +1,10 @@
 import Layout from "../components/core/Layout"
+import WorkCompleteTerminal from "../components/pageRefs/WorkCompleteTerminal"
 
 const workComplete = () => {
   return (
     <Layout style={{backgroundColor: 'white', color: 'black'}}>
-      <h2>Work Complete</h2>
+      <WorkCompleteTerminal />
     </Layout>
   )
 }
