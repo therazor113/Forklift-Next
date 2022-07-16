@@ -10,7 +10,7 @@ const ActionButtons = () => {
 
 // Load - Open load keypad
   const handleLoad = () => {
-    router.push('/workComplete')
+    router.push('/moveConfirmation')
   }
   
 // Dock - Open dock keypad
