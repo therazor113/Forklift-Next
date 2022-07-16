@@ -11,6 +11,8 @@ export const units = [
     drop: 'N/A',
     dispatch: 'N/A',
     final: 'N/A',
+    loaded: 20,
+    docked: null,
   },
   {
     proNumber: 100000000,
@@ -24,6 +26,8 @@ export const units = [
     drop: 'N/A',
     dispatch: 'N/A',
     final: 'N/A',
+    loaded: null,
+    docked: null,
   },
   {
     proNumber: 987654321,
@@ -37,5 +41,7 @@ export const units = [
     drop: 'N/A',
     dispatch: 'N/A',
     final: 'N/A',
+    loaded: null,
+    docked: 10,
   }
 ]
