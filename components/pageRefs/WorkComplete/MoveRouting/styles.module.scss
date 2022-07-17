@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+        font-weight: bold;
+        border: 1px outset gray;
+        background-color: green;
+        &:active {
+            border: 2px inset lightgray;
+        }
+    }
+}
+.okButton {
+    font-size: 35px;
+    width: 125px;
+    height: 90px;
+}
+.getContainer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    h2 {
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        font-size: 35px;
+        background-color: yellow;
+    }
+    button {
+        color: white;
+        font-size: 35px;
+        width: 400px;
+        height: 85px;
+    }
+}
