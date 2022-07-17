@@ -4,7 +4,7 @@ import ProContainer from 'components/pageRefs/ShipmentDetails/ProContainer'
 import ProInformation from 'components/pageRefs/ShipmentDetails/ProInformation'
 import WeightCapture from 'components/pageRefs/ShipmentDetails/WeightCapture'
 import ShipmentNav from 'components/pageRefs/ShipmentDetails/ShipmentNav'
-import { WeightCaptureProvider } from 'components/context/WeightCaptureContext'
+import { WeightCaptureProvider } from 'contexts/WeightCaptureContext'
 
 import classes from 'styles/shipmentDetails.module.scss'
 
