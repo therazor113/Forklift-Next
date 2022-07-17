@@ -1,8 +1,21 @@
 .container {
+    margin-bottom: 5rem;
+    font-size: 23px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    h3 {
+        font-size: 28px;
+    }
 }
-
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    h1 {
+        text-decoration: underline;
+    }
+}
 .proInfo {
     color: darkgreen;
 }
