@@ -1,7 +1,19 @@
-// Sends to previous page
-const CancelButton = () => {
+import { useRouter } from "next/router"
+
+const CancelButton = ({ navPage }) => {
+  const router = useRouter()
+
+  const handleCancel = () => {
+    // Sends to nav page
+    if (navPage) {
+      router.push('/getWork')
+    } else {
+      history.back()
+    }
+    
+  }
   return (
-    <button onClick={() => history.back()}>Cancel</button>
+    <button onClick={handleCancel}>Cancel</button>
   )
 }
 
