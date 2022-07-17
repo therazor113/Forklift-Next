@@ -21,28 +21,28 @@ const SelectButtons = ({ submit }) => {
     <main className={classes.container}>
       <h2>Type</h2>
       <div>
-        <input onChange={() => setType(1)} type='radio' name='type' checked={type === 1} />
+        <input onChange={() => setType('1')} type='radio' name='type' checked={type === '1'} />
         <button>Reweigh</button>
       </div>
       <div>
-        <input onChange={() => setType(2)} type='radio' name='type' checked={type === 2} />
+        <input onChange={() => setType('2')} type='radio' name='type' checked={type === '2'} />
         <button>DMS</button>
       </div>
       <div>
-        <input onChange={() => setType(3)} type='radio' name='type' checked={type === 3} />
+        <input onChange={() => setType('3')} type='radio' name='type' checked={type === '3'} />
         <button>Both</button>
       </div>
       <h2>Network</h2>
       <div>
-        <input onChange={() => setNetwork(1)} type='radio' name='network' checked={network === 1} />
+        <input onChange={() => setNetwork('1')} type='radio' name='network' checked={network === '1'} />
         <button>Wifi</button>
       </div>
       <div>
-        <input onChange={() => setNetwork(2)} type='radio' name='network' checked={network === 2} />
+        <input onChange={() => setNetwork('2')} type='radio' name='network' checked={network === '2'} />
         <button>Cellular</button>
       </div>
       <div>
-        <input onChange={() => setNetwork(3)} type='radio' name='network' checked={network === 3} />
+        <input onChange={() => setNetwork('3')} type='radio' name='network' checked={network === '3'} />
         <button>Auto</button>
       </div>
     </main>
