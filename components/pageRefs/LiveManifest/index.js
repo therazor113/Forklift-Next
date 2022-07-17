@@ -24,7 +24,7 @@ const LiveManifest = () => {
         {showRecords && <h1 className={classes.noRecords}>No Records Found</h1>}
       </div>
       <div className={classes.nav}>
-        <CancelButton />
+        <CancelButton navPage={true}/>
         <PageNav />
       </div>
     </main>
