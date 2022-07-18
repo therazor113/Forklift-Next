@@ -13,7 +13,7 @@ const LiveStats = () => {
   }, [])
 
   loadedTrailer.current = () => {
-    fetch(`/api/loadedApi/[locations]/${currentPro.loaded}`)
+    fetch(`api/DatabaseApi/trailers/${currentPro.onTrailer}`)
       .then(res => res.json())
       .then(json => setLoadedData(json))
       .catch(err => console.log(err))
@@ -23,7 +23,7 @@ const LiveStats = () => {
     <main className={classes.container}>
       <h2 className={classes.proInfo}>
         PRO: {currentPro.proNumber}<br/>
-        {currentPro.loaded && `NOW LOADED IN DOOR ${currentPro.loaded} ON TRAILER ${loadedData?.number}`}
+        {currentPro.loaded && `NOW LOADED IN DOOR ${currentPro.loaded} ON TRAILER ${currentPro.onTrailer}`}
         {currentPro.docked && `SCANNED AND DOCKED IN BAY ${currentPro.docked}`}
       </h2>
       <div className={classes.stats}>
@@ -37,9 +37,9 @@ const LiveStats = () => {
       <h3>
         {!loadedData && <br/>}
         {loadedData &&
-        `${loadedData.number} - 
+        `${loadedData.trailerId} - 
         Bill Count: ${loadedData.billCount} 
-        Total Weight: ${loadedData.weight} 
+        Total Weight: ${loadedData.totalWeight} 
         Total Pieces: ${loadedData.pieces}`}
       </h3>
     </main>

@@ -17,7 +17,7 @@ const ManualProEntryTerminal = () => {
     handleEnter,
     setInputValue,
     data
-  ] = useFetchInput('', 'api/ProNumberApi/[pros]/')
+  ] = useFetchInput('', 'api/DatabaseApi/freight/')
 
   // Contexts when data changes
   useEffect(() => {

@@ -32,7 +32,7 @@ const ProInformation = () => {
       <div className={classes.info}>
         <h2>
           HU: <span>{currentPro.handlingUnits}</span>,
-          WEIGHT: <span>{currentPro.weight}</span>,
+          WEIGHT: <span>{currentPro.totalWeight}</span>,
           PIECES: <span>{currentPro.pieces}</span>
         </h2>
         <h2>

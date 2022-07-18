@@ -12,11 +12,11 @@ const ProInformation = () => {
       <h2>CN: <span>{currentPro.consignee}</span></h2>
       <div>
       <h2>HU: <span>{currentPro.handlingUnits}</span></h2>
-      <h2>Wgt: <span>{currentPro.weight}</span></h2>
+      <h2>Wgt: <span>{currentPro.totalWeight}</span></h2>
       <h2>Dim#: <span>{currentPro.dim}</span></h2>
       </div>
       <h2>Load Door: <span>{currentPro.dest}</span></h2>
-      <h2>Drop#: <span>{currentPro.drop}</span></h2>
+      <h2>Drop#: <span>{currentPro.dropLocation}</span></h2>
     </main>
   )
 }
