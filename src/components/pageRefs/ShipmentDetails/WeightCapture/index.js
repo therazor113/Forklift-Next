@@ -1,18 +1,28 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import WeightContext from 'contexts/WeightContext'
 import WeightCaptureContext from 'contexts/WeightCaptureContext'
+import CurrentProContext from 'contexts/CurrentProContext'
+import { Complete } from './Complete'
+import { SetTotal } from './setTotal'
 // import useEditInput
 
 import classes from './styles.module.scss'
 
 const WeightCapture = () => {
-  const { setWeightCaptureData } = useContext(WeightCaptureContext)
+  const { weightCaptureData, setWeightCaptureData } = useContext(WeightCaptureContext)
   const { weightData, setWeightData } = useContext(WeightContext)
+  const { currentPro, setCurrentPro } = useContext(CurrentProContext)
   // const { inputValue, handleChange } = useEditInput({ hu: 0 })
-  const [index, setIndex] = useState(1)
+  const [{ hu, weight }, setTotal] = useState({ hu: 0, weight: 0 })
   const [showInput, setShowInput] = useState(false)
+  const [index, setIndex] = useState(1)
   const router = useRouter()
+
+  // Set Total hu/weight
+  useEffect(() => {
+    SetTotal(weightCaptureData, setTotal)
+  }, [weightCaptureData])
 
   // Capture Button
   const handleCapture = () => {
@@ -31,6 +41,8 @@ const WeightCapture = () => {
 
   // Complete - Send to moveShipment
   const handleComplete = () => {
+    if (!hu || !weight) return
+    Complete(currentPro, setCurrentPro, hu, weight)
     router.push('/moveShipment')
   }
 
