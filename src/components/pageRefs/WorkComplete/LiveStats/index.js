@@ -10,10 +10,10 @@ const LiveStats = () => {
 
   useEffect(() => {
     loadedTrailer.current()
-  }, [])
+  }, [currentPro])
 
   loadedTrailer.current = () => {
-    fetch(`api/DatabaseApi/trailers/${currentPro.onTrailer}`)
+    fetch(`api/DatabaseApi/trailers/location/${currentPro.loaded}`)
       .then(res => res.json())
       .then(json => setLoadedData(json))
       .catch(err => console.log(err))
