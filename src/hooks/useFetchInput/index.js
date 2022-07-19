@@ -5,10 +5,12 @@ const useFetchInput = (initialValues, url) => {
   const [data, setData] = useState(undefined)
 
   const handleFetch = () => {
-    fetch(url + inputValue)
-      .then(res => res.json())
-      .then(json => setData(json))
-      .catch(err => console.log(err))
+    if (inputValue) {
+      fetch(url + inputValue)
+        .then(res => res.json())
+        .then(json => setData(json))
+        .catch(err => console.log(err))
+    }
   }
 
   return [
