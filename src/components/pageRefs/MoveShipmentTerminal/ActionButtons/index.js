@@ -10,12 +10,12 @@ const ActionButtons = () => {
 
   // Load - Open load keypad
   const handleLoad = () => {
-    router.push('/moveConfirmation')
+    router.push('/loadKeypad')
   }
 
   // Dock - Open dock keypad
   const handleDock = () => {
-
+    router.push('/dockKeypad')
   }
 
   // Write on - send alert ~{will send write on data to database}
