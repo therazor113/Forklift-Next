@@ -1,5 +1,5 @@
 export const Complete = async (currentPro, setCurrentPro, hu, weight) => {
-  const updateRes = await fetch(`api/DatabaseApi/freight/${currentPro.proNumber}`, {
+  const updateRes = await fetch(`api/DatabaseApi/freight/updateHuWeight/${currentPro.proNumber}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json'
