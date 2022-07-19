@@ -65,7 +65,7 @@ INSERT INTO Freight (
     loaded,
     docked,
     onTrailer
-) values (987654321, 'Johny', 'Joe', 1, 5, 10, 'N/A', 10, 'N/A', 'N/A', 'N/A', 20, null, 4321);
+) values (987654321, 'Johny', 'Joe', 1, 5, 10, 'N/A', 10, 'N/A', 'N/A', 'N/A', 50, null, 4321);
 INSERT INTO Freight (
     proNumber,
     shipper,
@@ -81,7 +81,7 @@ INSERT INTO Freight (
     loaded,
     docked,
     onTrailer
-) values (123456789, 'Jimmy', 'Bilbo', 3, 10, 1000, 'N/A', 50, 'N/A', 'N/A', 'N/A', 20, null, 4321);
+) values (123456789, 'Jimmy', 'Bilbo', 3, 10, 1000, 'N/A', 50, 'N/A', 'N/A', 'N/A', 50, null, 4321);
 INSERT INTO Freight (
     proNumber,
     shipper,
