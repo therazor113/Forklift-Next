@@ -15,7 +15,7 @@ const LoginKeypad = () => {
     handleEnter,
     setInputValue,
     data
-  ] = useFetchInput('', 'api/NamesApi/[users]/')
+  ] = useFetchInput('', 'api/UsersApi/')
 
   // setUserData when data changes
   useEffect(() => {
