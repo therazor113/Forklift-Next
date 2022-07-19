@@ -33,3 +33,4 @@ yarn-error.log*
 
 # local database data
 database.db
+users.db
