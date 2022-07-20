@@ -15,22 +15,15 @@ const useSelectInput = (initialValues) => {
 export default useSelectInput
 
 /**
- * import useFetchInput from './hooks/useFetchInput'
+ * import useFetchInput from './hooks/useSelectInput'
  *
  * const [
  * inputValue,
  * {set value of input box function},
- * {run fetch function}, setInputValue,
- * {json data retrieved}
- * ] = useFetchInput({initial value of input}, {url to send fetch request})
+ * setInputValue
+ * ] = useFetchInput({initial value of input})
  *
  * example:
- * const [
- * inputValue,
- * handleChange,
- * handleEnter,
- * setInputValue,
- * data
- * ] = useFetchInput('', `api/NamesApi/[users]/`)
+ * const [inputValue, handleChange] = useFetchInput('')
  *
  */
