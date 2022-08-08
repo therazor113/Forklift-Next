@@ -3,7 +3,7 @@ import { open } from 'sqlite'
 
 const editFreightByPro = async (req, res) => {
   const db = await open({
-    filename: './tmp/database.db',
+    filename: './src/data/tmp/database.db',
     driver: sqlite3.Database
   })
   if (req.method === 'PUT') {

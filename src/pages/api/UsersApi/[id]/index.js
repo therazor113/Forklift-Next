@@ -3,7 +3,7 @@ import { open } from 'sqlite'
 
 const getUserById = async (req, res) => {
   const db = await open({
-    filename: './tmp/users.db',
+    filename: './src/data/tmp/users.db',
     driver: sqlite3.Database
   })
   const user = await db.get('SELECT * FROM Users WHERE id = ?', [req.query.id])

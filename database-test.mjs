@@ -4,7 +4,7 @@ import { open } from 'sqlite'
 (async () => {
   try {
     const db = await open({
-      filename: './tmp/database.db',
+      filename: './src/data/tmp/database.db',
       driver: sqlite3.Database
     })
     await db.migrate({ force: true, migrationsPath: './migrations' })
@@ -18,7 +18,7 @@ import { open } from 'sqlite'
 
   try {
     const db = await open({
-      filename: './tmp/users.db',
+      filename: './src/data/tmp/users.db',
       driver: sqlite3.Database
     })
     await db.migrate({ force: true, migrationsPath: './migrations' })
