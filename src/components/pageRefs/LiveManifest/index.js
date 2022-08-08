@@ -1,4 +1,4 @@
-// import { useState } from 'react'
+import { useRouter } from 'next/router'
 import CancelButton from 'components/utilities/CancelButton'
 import ManifestHeader from './ManifestHeader'
 import PageNav from './PageNav'
@@ -6,7 +6,11 @@ import PageNav from './PageNav'
 import classes from './styles.module.scss'
 
 const LiveManifest = () => {
-  // const [showRecords, setShowRecords] = useState(true)
+  const router = useRouter()
+  const handleClick = () => {
+    router.push('/getWork')
+  }
+
   return (
     <main className={classes.container}>
       <ManifestHeader />
@@ -24,7 +28,10 @@ const LiveManifest = () => {
         {/* showRecords && */ <h1 className={classes.noRecords}>No Records Found</h1>}
       </div>
       <div className={classes.nav}>
-        <CancelButton navPage={true}/>
+        <div className={classes.route}>
+          <button onClick={handleClick}>Nav</button>
+          <CancelButton />
+        </div>
         <PageNav />
       </div>
     </main>
