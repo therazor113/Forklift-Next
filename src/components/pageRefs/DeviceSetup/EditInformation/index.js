@@ -50,19 +50,19 @@ const EditInformation = ({ submit, edit }) => {
       <h2>Terminal Code:</h2>
         <span>
           {!a && <span suppressHydrationWarning>{inputValue.term}</span>}
-          {a && <input name='term' value={inputValue.term} onChange={handleChange} />}
+          {a && <input name='term' value={inputValue.term} onChange={handleChange} autoFocus/>}
         </span>
       {d && <button onClick={handleTerminalCode}>&#x2328;</button>}
       <h2>Forklift ID:</h2>
       <span>
           {!b && <span suppressHydrationWarning>{inputValue.fork}</span>}
-          {b && <input name='fork' value={inputValue.fork} onChange={handleChange} />}
+          {b && <input name='fork' value={inputValue.fork} onChange={handleChange} autoFocus/>}
         </span>
       {d && <button onClick={handleForkliftID}>&#x2328;</button>}
       <h2>Scale Indicator ID:</h2>
       <span>
           {!c && <span suppressHydrationWarning>{inputValue.scale}</span>}
-          {c && <input name='scale' value={inputValue.scale} onChange={handleChange} />}
+          {c && <input name='scale' value={inputValue.scale} onChange={handleChange} autoFocus/>}
         </span>
       {d && <button onClick={handleScaleID}>&#x2328;</button>}
       <span />

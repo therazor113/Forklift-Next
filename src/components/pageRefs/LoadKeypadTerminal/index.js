@@ -40,7 +40,7 @@ const LoadKeypadTerminal = () => {
     <h1>Door Selection</h1>
     <div className={classes.inputContainer}>
       <h2>Enter Door #:</h2>
-      <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} />
+      <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} autoFocus/>
     </div>
       <Keys
       classes={classes}

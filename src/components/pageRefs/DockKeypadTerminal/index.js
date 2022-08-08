@@ -13,7 +13,7 @@ const DockKeypadTerminal = () => {
   const router = useRouter()
 
   const handleEnter = () => {
-    if (!inputValue || inputValue === 0 || inputValue >= 201) {
+    if (!inputValue || inputValue === 0 || inputValue > 200) {
       alert('please enter a valid bay between 1-200')
       return
     }
@@ -33,7 +33,7 @@ const DockKeypadTerminal = () => {
     <h1>Bay Selection</h1>
     <div className={classes.inputContainer}>
       <h2>Enter Bay #:</h2>
-      <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} />
+      <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} autoFocus/>
     </div>
       <Keys
       classes={classes}

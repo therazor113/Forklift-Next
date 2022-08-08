@@ -36,7 +36,7 @@ const LoginKeypad = () => {
       <h1>Please enter your badge ID. Then press Enter.</h1>
       <div className={classes.inputContainer}>
         <h2>Badge ID:</h2>
-        <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} />
+        <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} autoFocus/>
       </div>
         <Keys
         classes={classes}

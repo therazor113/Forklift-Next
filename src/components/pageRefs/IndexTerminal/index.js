@@ -32,10 +32,13 @@ const IndexTerminal = () => {
 
   return (
   <main className={classes.login}>
+    <div className={classes.dev}>
+      <h2>Available Badges: 123, 234, 345</h2>
+    </div>
     <h1>Welcome, please scan your badge</h1>
     <div className={classes.inputContainer}>
       <h2>Badge ID: </h2>
-      <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} />
+      <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} autoFocus/>
       <Link href={'/loginKeypad'}>
         <button>&#x2328;</button>
       </Link>

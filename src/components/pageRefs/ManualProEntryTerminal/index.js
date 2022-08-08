@@ -40,7 +40,7 @@ const ManualProEntryTerminal = () => {
     <h1>Please enter a pro number</h1>
     <div className={classes.inputContainer}>
       <h2>Pro Number:</h2>
-      <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} />
+      <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} autoFocus/>
     </div>
       <Keys
       classes={classes}
