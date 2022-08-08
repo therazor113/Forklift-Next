@@ -5,10 +5,12 @@
     border-top: 2px solid black;
     justify-content: center;
     align-items: center;
-    a {
+    div {
+        line-height: 10px;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-grow: 1;
+        gap: 0.2rem;
     }
 }
