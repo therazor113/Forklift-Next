@@ -9,7 +9,7 @@ const HeaderComponent = ({ titleID, titleExtra, style, style2 }) => {
           <p className={classes.extra}>{titleExtra}</p>
         </div>
         <div style={style2} className={classes.areaClock}>
-          <h2>[NULL]</h2>
+          <h2>[DEV]</h2>
           <LiveClock />
         </div>
     </header>
