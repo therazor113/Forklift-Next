@@ -22,7 +22,7 @@ const LoadKeypadTerminal = () => {
         Enter(currentPro, setCurrentPro, inputValue, trailerId)
         router.push('/moveConfirmation')
       } catch (err) {
-        alert('Please enter trailer door dev: 50, 70, 30')
+        alert('Please enter a valid trailer door: 30, 50, 70')
         console.log(err)
       }
     }
@@ -37,6 +37,7 @@ const LoadKeypadTerminal = () => {
 
   return (
   <main className={classes.keypadBox}>
+    <h2>Available doors: 30 - 50 - 70</h2>
     <h1>Door Selection</h1>
     <div className={classes.inputContainer}>
       <h2>Enter Door #:</h2>
