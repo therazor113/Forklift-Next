@@ -33,6 +33,7 @@ const LoginKeypad = () => {
 
   return (
     <main className={classes.keypadBox}>
+      <h2>Available Badges: 123, 234, 345</h2>
       <h1>Please enter your badge ID. Then press Enter.</h1>
       <div className={classes.inputContainer}>
         <h2>Badge ID:</h2>
