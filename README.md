@@ -1,6 +1,6 @@
 Forklift-Next-Project
 
-Main project for learning Javascript, scss, React, NextJs
+My main project for learning Javascript, scss, React, NextJs
 
 Setup:
 npm install
