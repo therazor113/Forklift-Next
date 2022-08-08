@@ -14,7 +14,7 @@ const DockKeypadTerminal = () => {
 
   const handleEnter = () => {
     if (!inputValue || inputValue === 0 || inputValue > 200) {
-      alert('please enter a valid bay between 1-200')
+      alert('Please enter a valid bay between 1-200')
       return
     }
     Enter(currentPro, setCurrentPro, inputValue)
@@ -30,6 +30,7 @@ const DockKeypadTerminal = () => {
 
   return (
   <main className={classes.keypadBox}>
+    <h2>Available Bays: 1-200</h2>
     <h1>Bay Selection</h1>
     <div className={classes.inputContainer}>
       <h2>Enter Bay #:</h2>
