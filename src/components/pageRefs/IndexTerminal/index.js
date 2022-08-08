@@ -32,9 +32,6 @@ const IndexTerminal = () => {
 
   return (
   <main className={classes.login}>
-    <div className={classes.dev}>
-      <h2>Available Badges: 123, 234, 345</h2>
-    </div>
     <h1>Welcome, please scan your badge</h1>
     <div className={classes.inputContainer}>
       <h2>Badge ID: </h2>
@@ -43,6 +40,7 @@ const IndexTerminal = () => {
         <button>&#x2328;</button>
       </Link>
     </div>
+    <h2>Available Badges: 123, 234, 345</h2>
   </main>
   )
 }

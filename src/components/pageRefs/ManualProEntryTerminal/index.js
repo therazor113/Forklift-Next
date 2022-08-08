@@ -37,6 +37,7 @@ const ManualProEntryTerminal = () => {
 
   return (
   <main className={classes.keypadBox}>
+    <h2>Available ProNumbers: - 123456789 - 987654321 - 100000000 - 222222222</h2>
     <h1>Please enter a pro number</h1>
     <div className={classes.inputContainer}>
       <h2>Pro Number:</h2>
