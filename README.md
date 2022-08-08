@@ -1,11 +1,13 @@
 Forklift-Next-Project
 
-My main project for learning Javascript, scss, React, NextJs
+My main project for learning Javascript, Sass, React, NextJs
 
-Setup:
+## Setup:
+```
 npm install
-
-Run:
+```
+## Start:
+```
 npm run dev
-
+```
 http://localhost:3000
