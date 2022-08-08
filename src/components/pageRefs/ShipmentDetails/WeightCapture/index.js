@@ -41,9 +41,12 @@ const WeightCapture = () => {
 
   // Complete - Send to moveShipment
   const handleComplete = () => {
-    if (!hu || !weight) return
-    Complete(currentPro, setCurrentPro, hu, weight)
-    router.push('/moveShipment')
+    if (!hu || !weight) {
+      alert('A weight must be captured!')
+    } else {
+      Complete(currentPro, setCurrentPro, hu, weight)
+      router.push('/moveShipment')
+    }
   }
 
   // For weight change example
