@@ -12,12 +12,12 @@ const DockKeypadTerminal = () => {
   const [inputValue, handleChange, setInputValue] = useSelectInput('')
   const router = useRouter()
 
-  const handleEnter = () => {
+  const handleEnter = async () => {
     if (!inputValue || inputValue === 0 || inputValue > 200) {
       alert('Please enter a valid bay between 1-200')
       return
     }
-    Enter(currentPro, setCurrentPro, inputValue)
+    await Enter(currentPro, setCurrentPro, inputValue)
     router.push('/moveConfirmation')
   }
 
