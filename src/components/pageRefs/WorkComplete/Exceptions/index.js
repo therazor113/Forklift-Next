@@ -1,20 +1,16 @@
-import { useRouter } from 'next/router'
-
 import classes from './styles.module.scss'
 
 const Exceptions = () => {
-  const router = useRouter()
-
   const handleOver = () => {
-    router.push('/')
+
   }
 
   const handleShort = () => {
-    router.push('/')
+
   }
 
   const handleDamage = () => {
-    router.push('/')
+
   }
 
   return (
