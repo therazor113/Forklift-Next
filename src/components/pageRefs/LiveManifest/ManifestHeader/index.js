@@ -11,7 +11,7 @@ const ManifestHeader = () => {
       </div>
       <div className={classes.infoContainer}>
       <h2>LIVE MANIFEST</h2>
-      <p>Trailer: NULL / Door: NULL / Assigned to: John Johnson</p>
+      <p>Trailer: N/A / Door: N/A / Assigned to: John Johnson</p>
       </div>
     </main>
   )
