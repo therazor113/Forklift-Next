@@ -10,7 +10,7 @@ const ProContainer = () => {
 
   return (
     <main className={classes.container}>
-      <h2>Pro: <span>{currentPro.proNumber}</span></h2>
+      <h2>Pro: <span>{currentPro.pronumber}</span></h2>
       <div className={classes.buttons}>
         <ManualProButton title={'Manual Pro'}/>
         <PreviousProButton />

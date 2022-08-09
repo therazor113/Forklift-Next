@@ -12,7 +12,7 @@ const WorkName = () => {
 
   return (
     <main className={classes.container}>
-      <h1>WELCOME {userData.firstName} {userData.lastName}</h1>
+      <h1>WELCOME {userData.firstname} {userData.lastname}</h1>
       <div className={classes.userButtons}>
         <LogoutButton title={'LOG OFF'}/>
         <ManifestButton title={'RETRY'} />

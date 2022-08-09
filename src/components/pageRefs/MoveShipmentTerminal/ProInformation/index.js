@@ -19,7 +19,7 @@ const ProInformation = () => {
     <main className={classes.container}>
       <div className={classes.pro}>
       <h2>Pro#: </h2>
-      <button onClick={handleClick}>{currentPro.proNumber}</button>
+      <button onClick={handleClick}>{currentPro.pronumber}</button>
       </div>
       <div className={classes.header}>
         <h1>SHIPPER&nbsp;</h1>
@@ -31,8 +31,8 @@ const ProInformation = () => {
       </div>
       <div className={classes.info}>
         <h2>
-          HU: <span>{currentPro.handlingUnits}</span>,
-          WEIGHT: <span>{currentPro.totalWeight}</span>,
+          HU: <span>{currentPro.handlingunits}</span>,
+          WEIGHT: <span>{currentPro.totalweight}</span>,
           PIECES: <span>{currentPro.pieces}</span>
         </h2>
         <h2>

@@ -9,7 +9,7 @@ const ConfirmName = () => {
   return (
     <div className={classes.container}>
       <h2>Welcome</h2>
-      <h2>Are You {userData.firstName} {userData.lastName} ?</h2>
+      <h2>Are You {userData.firstname} {userData.lastname} ?</h2>
     </div>
   )
 }

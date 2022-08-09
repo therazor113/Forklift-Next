@@ -10,7 +10,7 @@ const PreviousProTerminal = () => {
 
   // Filter duplicates from array && only show 5 most recent pro's
   const newList = previousProData.filter((a, i, f) =>
-    f.findIndex(a2 => (a2.proNumber === a.proNumber)) === i).slice(-5)
+    f.findIndex(a2 => (a2.pronumber === a.pronumber)) === i).slice(-5)
 
   return (
     <main className={classes.container}>
@@ -18,7 +18,7 @@ const PreviousProTerminal = () => {
       {newList.map((prev) => (
         <PreviousProRoutes
           key={`key-${prev.proNumber}`}
-          title={prev.proNumber + ' ' + prev.shipper}
+          title={prev.pronumber + ' ' + prev.shipper}
           prevPro={prev}
         />
       ))}
