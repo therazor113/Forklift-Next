@@ -1,13 +1,12 @@
-import sqlite3 from 'sqlite3'
-import { open } from 'sqlite'
+import pool from 'lib/db'
 
 const getFreightByPro = async (req, res) => {
-  const db = await open({
-    filename: './src/data/tmp/database.db',
-    driver: sqlite3.Database
-  })
-  const freight = await db.get('SELECT * FROM Freight WHERE proNumber = ?', [req.query.proNumber])
-  res.json(freight)
+  try {
+    const freight = await pool.query('SELECT * FROM freight WHERE pronumber = $1', [req.query.proNumber])
+    res.json(freight.rows[0])
+  } catch (err) {
+    console.error(err.message)
+  }
 }
 
 export default getFreightByPro

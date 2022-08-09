@@ -1,14 +1,12 @@
-import sqlite3 from 'sqlite3'
-import { open } from 'sqlite'
+import pool from 'lib/db'
 
 const getUserById = async (req, res) => {
-  const db = await open({
-    filename: './src/data/tmp/users.db',
-    driver: sqlite3.Database
-  })
-  const user = await db.get('SELECT * FROM Users WHERE id = ?', [req.query.id])
-
-  res.json(user)
+  try {
+    const user = await pool.query('SELECT * FROM users WHERE id = $1', [req.query.id])
+    res.json(user.rows[0])
+  } catch (err) {
+    console.error(err.message)
+  }
 }
 
 export default getUserById

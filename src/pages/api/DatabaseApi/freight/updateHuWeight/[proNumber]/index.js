@@ -1,24 +1,14 @@
-import sqlite3 from 'sqlite3'
-import { open } from 'sqlite'
+/* eslint-disable no-unused-vars */
+import pool from 'lib/db'
 
-const editFreightByPro = async (req, res) => {
-  const db = await open({
-    filename: './src/data/tmp/database.db',
-    driver: sqlite3.Database
-  })
-  if (req.method === 'PUT') {
-    const statement = await db.prepare(
-      'UPDATE Freight SET handlingUnits = ?, totalWeight = ? where proNumber = ?'
-    )
-    await statement.run(
-      req.body.handlingUnits,
-      req.body.totalWeight,
-      req.query.proNumber
-    )
-    await db.migrate({ force: true })
+const updateFreightHuWeight = async (req, res) => {
+  try {
+    const freight = await pool.query('UPDATE freight SET handlingunits = $1, totalweight = $2 WHERE pronumber = $3',
+      [req.body.handlingUnits, req.body.totalWeight, req.query.proNumber])
+    res.json('Freight Updated')
+  } catch (err) {
+    console.error(err.message)
   }
-  const freight = await db.get('SELECT * FROM Freight WHERE proNumber = ?', [req.query.proNumber])
-  res.json(freight)
 }
 
-export default editFreightByPro
+export default updateFreightHuWeight
