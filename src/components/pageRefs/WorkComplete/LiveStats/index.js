@@ -9,6 +9,7 @@ const LiveStats = () => {
   const loadedTrailer = useRef(() => {})
 
   useEffect(() => {
+    if (!currentPro.loaded) return
     loadedTrailer.current()
   }, [currentPro])
 
@@ -21,9 +22,9 @@ const LiveStats = () => {
 
   return (
     <main className={classes.container}>
-      <h2 className={classes.proInfo}>
-        PRO: {currentPro.proNumber}<br/>
-        {currentPro.loaded && `NOW LOADED IN DOOR ${currentPro.loaded} ON TRAILER ${currentPro.onTrailer}`}
+      <h2 className={classes.proinfo}>
+        PRO: {currentPro.pronumber}<br/>
+        {currentPro.loaded && `NOW LOADED IN DOOR ${currentPro.loaded} ON TRAILER ${currentPro.ontrailer}`}
         {currentPro.docked && `SCANNED AND DOCKED IN BAY ${currentPro.docked}`}
       </h2>
       <div className={classes.stats}>
@@ -36,11 +37,11 @@ const LiveStats = () => {
       </div>
       <h3>
         {!loadedData && <br/>}
-        {loadedData &&
-        `${loadedData.trailerId} - 
-        Bill Count: ${loadedData.billCount} 
-        Total Weight: ${loadedData.totalWeight} 
-        Total Pieces: ${loadedData.pieces}`}
+        {currentPro.loaded &&
+        `${loadedData?.trailerid} - 
+        Bill Count: ${loadedData?.billcount} 
+        Total Weight: ${loadedData?.totalweight} 
+        Total Pieces: ${loadedData?.pieces}`}
       </h3>
     </main>
   )
