@@ -19,7 +19,7 @@ const LoadKeypadTerminal = () => {
       try {
         const resId = await fetch(`api/DatabaseApi/trailers/location/${inputValue}`)
         const trailerId = await resId.json()
-        Enter(currentPro, setCurrentPro, inputValue, trailerId)
+        await Enter(currentPro, setCurrentPro, inputValue, trailerId)
         router.push('/moveConfirmation')
       } catch (err) {
         alert('Please enter a valid trailer door: 30, 50, 70')
