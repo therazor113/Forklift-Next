@@ -20,7 +20,7 @@ const ActionButtons = () => {
 
   // Write on - send alert ~{will send write on data to database}
   const handleWrite = () => {
-    alert(`PRO NUMBER ${currentPro.proNumber} HAS BEEN ENTERED INTO THE SYSTEM AS A WRITE ON!!!`)
+    alert(`PRO NUMBER ${currentPro.pronumber} HAS BEEN ENTERED INTO THE SYSTEM AS A WRITE ON!!!`)
   }
 
   return (
