@@ -1,9 +1,9 @@
 .container {
-    width: 96vw;
-    height: 93vh;
     color: white;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    gap: 1rem;
     button:active {
         border: 3px inset;
         background-color: green;
