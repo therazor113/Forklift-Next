@@ -1,6 +1,6 @@
 Forklift-Next-Project
 
-My main project for learning Javascript, Sass, React, NextJs
+Project for learning Javascript, Sass, React, NextJs
 
 ## Setup:
 ```
