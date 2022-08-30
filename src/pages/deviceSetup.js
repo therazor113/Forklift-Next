@@ -3,10 +3,7 @@ import DeviceSetupTerminal from 'components/pageRefs/DeviceSetup/DeviceSetupTerm
 
 const deviceSetup = () => {
   return (
-    <Layout
-      titleID={'Device Setup:'}
-      style={{ backgroundColor: 'rgb(25, 50, 200)' }}
-    >
+    <Layout titleID={'Device Setup:'}>
       <DeviceSetupTerminal />
     </Layout>
   )

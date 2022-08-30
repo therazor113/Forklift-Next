@@ -3,9 +3,7 @@ import LiveManifest from 'components/pageRefs/LiveManifest'
 
 const workManifest = () => {
   return (
-    <Layout
-      style={{ backgroundColor: 'white', color: 'black' }}
-    >
+    <Layout style={{ backgroundColor: 'white', color: 'black' }}>
       <LiveManifest />
     </Layout>
   )

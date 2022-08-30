@@ -4,10 +4,7 @@ import ConfirmButtons from 'components/pageRefs/LoginConfirm/ConfirmButtons'
 
 const Confirm = () => {
   return (
-    <Layout
-      titleID={'Login Confirmation:'}
-      style={{ backgroundColor: 'rgb(25, 50, 200)' }}
-    >
+    <Layout titleID={'Login Confirmation:'}>
       <ConfirmName />
       <ConfirmButtons />
     </Layout>

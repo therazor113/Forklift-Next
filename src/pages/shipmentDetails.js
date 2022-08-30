@@ -10,7 +10,7 @@ import classes from 'styles/shipmentDetails.module.scss'
 
 const shipmentDetails = () => {
   return (
-    <Layout titleID={'Shipment Details'} style={{ backgroundColor: 'rgb(25, 50, 200)' }}>
+    <Layout titleID={'Shipment Details'}>
       <WeightCaptureProvider>
         <main className={classes.container}>
           <div className={classes.leftContainer}>

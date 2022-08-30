@@ -2,6 +2,9 @@
     margin-top: 2rem;
     display: flex;
     gap: 2rem;
+    h2 {
+        white-space: nowrap;
+    }
     button {
         margin: 40px;
         border-radius: 10px;

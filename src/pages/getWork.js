@@ -3,9 +3,7 @@ import GetWorkTerminal from 'components/pageRefs/GetWorkTerminal'
 
 const getWork = () => {
   return (
-    <Layout
-      style={{ backgroundColor: 'white', color: 'black' }}
-    >
+    <Layout style={{ backgroundColor: 'white', color: 'black' }}>
       <GetWorkTerminal />
     </Layout>
   )

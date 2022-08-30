@@ -7,10 +7,7 @@ import classes from 'styles/survey.module.scss'
 
 const loginSurvey = () => {
   return (
-    <Layout
-      titleID={'Login Survey:'}
-      style={{ backgroundColor: 'rgb(25, 50, 200)' }}
-    >
+    <Layout titleID={'Login Survey:'}>
       <div className={classes.container}>
       <WeightCheck />
       <Inspection />
