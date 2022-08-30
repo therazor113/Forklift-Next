@@ -7,7 +7,7 @@ const Home = () => {
     titleID={'Login:'}
     titleExtra={'Build#: 000000-0000P'}
   >
-  <IndexTerminal />
+    <IndexTerminal />
   </Layout>
   )
 }

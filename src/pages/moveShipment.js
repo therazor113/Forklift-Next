@@ -14,12 +14,14 @@ const moveShipment = () => {
       style2={{ display: 'flex', gap: '0.6rem', justifyContent: 'start', width: '450px' }}
     >
       <HeaderButtons />
-      <main className={classes.container}>
-        <ProInformation />
-      <div className={classes.actions}>
-        <ActionButtons />
-        <NavButtons />
-      </div>
+      <main className={classes.stretch}>
+        <div className={classes.container}>
+          <ProInformation />
+          <div className={classes.actions}>
+            <ActionButtons />
+            <NavButtons />
+          </div>
+        </div>
       </main>
     </Layout>
   )
