@@ -1,12 +1,10 @@
+@use 'styles/variables' as *;
+
 .buttonDiv {
     margin-top: 2rem;
     display: flex;
-    gap: 2rem;
-    h2 {
-        white-space: nowrap;
-    }
+    gap: 3rem;
     button {
-        margin: 40px;
         border-radius: 10px;
         border: 2px outset;
         background-color: skyblue;
@@ -17,6 +15,14 @@
         &:active {
             border: 3px inset;
             background-color: green;
+        }
+    }
+    @include media(mobile) {
+        gap: 12vw;
+        button {
+            width: 25vw;
+            height: 7vh;
+            font-size: 4vw;
         }
     }
 }

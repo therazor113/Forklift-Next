@@ -1,3 +1,5 @@
+@use 'styles/variables' as *;
+
 .container {
     color: white;
     font-size: 40px;
@@ -6,4 +8,9 @@
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+    @include media(mobile) {
+        font-size: 5vmin;
+        text-align: center;
+        gap: 0;
+    }
 }

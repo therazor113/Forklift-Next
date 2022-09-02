@@ -1,3 +1,5 @@
+@use 'styles/variables' as *;
+
 .container {
     width: 95vw;
     height: 90vh;
@@ -30,6 +32,7 @@
 }
 .userButtons {
     display: flex;
+    flex-wrap: wrap;
     gap: 3rem;
     align-self: flex-end;
 }

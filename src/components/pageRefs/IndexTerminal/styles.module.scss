@@ -1,3 +1,5 @@
+@use 'styles/variables' as *;
+
 .login {
     color: white;
     display: flex;
@@ -34,5 +36,11 @@
     }
     h2 {
         font-size: 30px;
+    }
+    @include media(mobile) {
+        flex-direction: column;
+        input {
+            width: 50vw;
+        }
     }
 }

@@ -1,3 +1,15 @@
+@use 'styles/variables' as *;
+
+.keypadBox {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+    color: black;
+    h1 {
+        font-size: 45px;
+    }
+}
 .inputContainer {
     display: flex;
     gap: 20px;
@@ -12,16 +24,6 @@
     }
     h2 {
         font-size: 35px;
-    }
-}
-.keypadBox {
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    align-items: center;
-    color: black;
-    h1 {
-        font-size: 45px;
     }
 }
 .keypad {
@@ -54,4 +56,29 @@
 .functionKeys {
     display: grid;
     gap: 2rem;
+}
+
+@include media(mobile) {
+    .keypadBox {
+        input {
+            width: 50vw;
+        }
+        h1 {
+            font-size: 6vmin;
+        }
+        button {
+            width: 20vw;
+            height: 16vw;
+            font-size: 4vmin;
+        }
+    }
+    .inputContainer {
+        flex-direction: column;
+    }
+    .keypad {
+        gap: 5vmin;
+    }
+    .keypadKeys {
+        gap: 3vmin;
+    }
 }
