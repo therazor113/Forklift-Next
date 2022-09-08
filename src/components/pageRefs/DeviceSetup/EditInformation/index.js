@@ -65,7 +65,6 @@ const EditInformation = ({ submit, edit }) => {
           {c && <input name='scale' value={inputValue.scale} onChange={handleChange} autoFocus/>}
         </span>
       {d && <button onClick={handleScaleID}>&#x2328;</button>}
-      <span />
       <h2>Device ID:</h2><span>DEV</span>
     </main>
   )

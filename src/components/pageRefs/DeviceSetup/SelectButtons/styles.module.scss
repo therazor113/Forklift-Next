@@ -8,6 +8,24 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    align-items: center;
+    gap: 10px;
+    @media (max-width: 768px) {
+        align-self: center;
+        width: fit-content;
+        height: fit-content;
+        min-height: fit-content;
+        flex-direction: row;
+        margin-bottom: 2rem;
+        padding: 1rem;
+    }
+}
+
+.selectContainer {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
     gap: 10px;
     button {
         align-self: center;
@@ -17,6 +35,9 @@
         background-color: green;
         border: 2px outset lightgray;
         font-size: 30px;
+        @media (max-width: 768px) {
+            width: 40vw;
+        }
     }
     input {
         position: absolute;

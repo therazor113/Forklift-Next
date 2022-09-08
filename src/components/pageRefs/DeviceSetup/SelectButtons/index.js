@@ -19,31 +19,35 @@ const SelectButtons = ({ submit }) => {
 
   return (
     <main className={classes.container}>
-      <h2>Type</h2>
-      <div>
-        <input onChange={() => setType('1')} type='radio' name='type' checked={type === '1'} />
-        <button>Reweigh</button>
+      <div className={classes.selectContainer}>
+        <h2>Type</h2>
+        <div>
+          <input onChange={() => setType('1')} type='radio' name='type' checked={type === '1'} />
+          <button>Reweigh</button>
+        </div>
+        <div>
+          <input onChange={() => setType('2')} type='radio' name='type' checked={type === '2'} />
+          <button>DMS</button>
+        </div>
+        <div>
+          <input onChange={() => setType('3')} type='radio' name='type' checked={type === '3'} />
+          <button>Both</button>
+        </div>
       </div>
-      <div>
-        <input onChange={() => setType('2')} type='radio' name='type' checked={type === '2'} />
-        <button>DMS</button>
-      </div>
-      <div>
-        <input onChange={() => setType('3')} type='radio' name='type' checked={type === '3'} />
-        <button>Both</button>
-      </div>
-      <h2>Network</h2>
-      <div>
-        <input onChange={() => setNetwork('1')} type='radio' name='network' checked={network === '1'} />
-        <button>Wifi</button>
-      </div>
-      <div>
-        <input onChange={() => setNetwork('2')} type='radio' name='network' checked={network === '2'} />
-        <button>Cellular</button>
-      </div>
-      <div>
-        <input onChange={() => setNetwork('3')} type='radio' name='network' checked={network === '3'} />
-        <button>Auto</button>
+      <div className={classes.selectContainer}>
+        <h2>Network</h2>
+        <div>
+          <input onChange={() => setNetwork('1')} type='radio' name='network' checked={network === '1'} />
+          <button>Wifi</button>
+        </div>
+        <div>
+          <input onChange={() => setNetwork('2')} type='radio' name='network' checked={network === '2'} />
+          <button>Cellular</button>
+        </div>
+        <div>
+          <input onChange={() => setNetwork('3')} type='radio' name='network' checked={network === '3'} />
+          <button>Auto</button>
+        </div>
       </div>
     </main>
   )
