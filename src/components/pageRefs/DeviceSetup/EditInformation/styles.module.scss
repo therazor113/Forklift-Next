@@ -5,15 +5,27 @@
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     width: 70vw;
     color: white;
+    @media (max-width: 768px) {
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        height: 50vh;
+    }
     h2 {
+        white-space: nowrap;
         grid-column: 1 / 1;
         text-align: end;
         font-size: 40px;
+        @media (max-width: 768px) {
+            font-size: calc(10px + 4vw);
+        }
     }
     span {
+        margin-left: 8px;
         grid-column: 2 / 2;
         text-align: center;
         font-size: 40px;
+        @media (max-width: 768px) {
+            font-size: calc(10px + 4vw);
+        }
     }
     button {
         grid-column: 3 / 3;
@@ -27,6 +39,11 @@
         &:active {
             border: 2px inset lightgray;
         }
+        @media (max-width: 768px) {
+            width: 15vw;
+            height: 7vh;
+            font-size: calc(15px + 4vw);
+        }
     }
     input {
         text-align: center;
@@ -34,5 +51,10 @@
         height: 60px;
         font-size: 40px;
         background-color: transparent;
+        @media (max-width: 768px) {
+            width: 15vw;
+            height: 6vh;
+            font-size: calc(10px + 4vw);
+        }
     }
 }

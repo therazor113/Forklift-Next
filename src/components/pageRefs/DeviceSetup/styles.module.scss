@@ -8,6 +8,9 @@
 .editContainer {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 }
 .nav {
     display: flex;
@@ -21,6 +24,10 @@
         border-radius: 10px;
         font-size: 30px;
         font-weight: bold;
+        @media (max-width: 768px) {
+            width: 30vw;
+            font-size: calc(10px + 4vw);
+        }
         &:active {
             background-color: green;
             border: 2px inset gray;
