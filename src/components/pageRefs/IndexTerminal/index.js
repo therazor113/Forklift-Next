@@ -31,17 +31,22 @@ const IndexTerminal = () => {
   }
 
   return (
-  <main className={classes.login}>
-    <h1>Welcome, please scan your badge</h1>
-    <div className={classes.inputContainer}>
-      <h2>Badge ID: </h2>
-      <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} autoFocus/>
-      <Link href={'/loginKeypad'}>
-        <button>&#x2328;</button>
-      </Link>
-    </div>
-    <h2>Available Badges: 123, 234, 345</h2>
-  </main>
+    <main className={classes.login}>
+      <h1 style={{color: '#E51A36'}}>Currently under renovations!</h1>
+      <h2>
+        check out <a style={{color: '#FF0000'}} href='https://github.com/therazor113/Forklift-Next'
+        >GitHub</a> for more details
+      </h2>
+      <h1>Welcome, please scan your badge</h1>
+      <div className={classes.inputContainer}>
+        <h2>Badge ID: </h2>
+        <input value={inputValue} onChange={handleChange} /* onKeyUp={handleKeyUp} */ autoFocus />
+        <Link href={'/loginKeypad'}>
+          <button>&#x2328;</button>
+        </Link>
+      </div>
+      <h2>Available Badges: 123, 234, 345</h2>
+    </main>
   )
 }
 
