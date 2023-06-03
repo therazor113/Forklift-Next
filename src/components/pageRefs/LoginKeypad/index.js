@@ -26,9 +26,10 @@ const LoginKeypad = () => {
   }, [data, setUserData, router])
   // Keyboard enter pressed
   const handleKeyUp = (e) => {
-    // if (e.key === 'Enter') {
-    //   handleEnter()
-    // }
+    // disabled
+    if (e.key === 'Enterr') {
+      handleEnter()
+    }
   }
 
   return (
@@ -43,7 +44,7 @@ const LoginKeypad = () => {
           classes={classes}
           inputValue={inputValue}
           setInputValue={setInputValue}
-          onEnter={() => { /* handleEnter */ }}
+          onEnter={() => { /* disabled handleEnter */ }}
         />
     </main>
   )

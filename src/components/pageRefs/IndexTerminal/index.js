@@ -25,9 +25,10 @@ const IndexTerminal = () => {
   }, [data, setUserData, router])
   // Keyboard enter pressed
   const handleKeyUp = (e) => {
-    // if (e.key === 'Enter') {
-    //   handleEnter()
-    // }
+    // disabled
+    if (e.key === 'Enterr') {
+      handleEnter()
+    }
   }
 
   return (
