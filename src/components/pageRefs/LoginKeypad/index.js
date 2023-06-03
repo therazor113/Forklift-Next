@@ -26,9 +26,9 @@ const LoginKeypad = () => {
   }, [data, setUserData, router])
   // Keyboard enter pressed
   const handleKeyUp = (e) => {
-    if (e.key === 'Enter') {
-      handleEnter()
-    }
+    // if (e.key === 'Enter') {
+    //   handleEnter()
+    // }
   }
 
   return (
@@ -37,13 +37,13 @@ const LoginKeypad = () => {
       <h1>Please enter your badge ID. Then press Enter.</h1>
       <div className={classes.inputContainer}>
         <h2>Badge ID:</h2>
-        <input value={inputValue} onChange={handleChange} /* onKeyUp={handleKeyUp} */ autoFocus/>
+        <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} autoFocus/>
       </div>
         <Keys
           classes={classes}
           inputValue={inputValue}
           setInputValue={setInputValue}
-          onEnter={() => {/*Disabled*/}}
+          onEnter={() => { /* handleEnter */ }}
         />
     </main>
   )
