@@ -2,6 +2,8 @@ Forklift-Next-Project
 
 Project for learning Javascript, Sass, React, NextJs
 
+### Currently under renovations, will be updated in ~5 buisness days
+
 ## Setup:
 ```
 npm install
