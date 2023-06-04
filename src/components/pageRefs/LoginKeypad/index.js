@@ -27,7 +27,7 @@ const LoginKeypad = () => {
   // Keyboard enter pressed
   const handleKeyUp = (e) => {
     // disabled
-    if (e.key === 'Enterr') {
+    if (e.key === 'Enter') {
       handleEnter()
     }
   }
@@ -44,7 +44,7 @@ const LoginKeypad = () => {
           classes={classes}
           inputValue={inputValue}
           setInputValue={setInputValue}
-          onEnter={() => { /* disabled handleEnter */ }}
+          onEnter={handleEnter}
         />
     </main>
   )

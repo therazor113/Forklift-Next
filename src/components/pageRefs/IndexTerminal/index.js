@@ -26,18 +26,13 @@ const IndexTerminal = () => {
   // Keyboard enter pressed
   const handleKeyUp = (e) => {
     // disabled
-    if (e.key === 'Enterr') {
+    if (e.key === 'Enter') {
       handleEnter()
     }
   }
 
   return (
     <main className={classes.login}>
-      <h1 style={{ color: '#E51A36' }}>Currently under renovations!</h1>
-      <h2>
-        check out <a style={{ color: '#FF0000' }} href='https://github.com/therazor113/Forklift-Next'
-        >GitHub</a> for more details
-      </h2>
       <h1>Welcome, please scan your badge</h1>
       <div className={classes.inputContainer}>
         <h2>Badge ID: </h2>
