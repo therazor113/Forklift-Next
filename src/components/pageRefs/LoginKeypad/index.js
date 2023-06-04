@@ -20,6 +20,7 @@ const LoginKeypad = () => {
   // setUserData when data changes
   useEffect(() => {
     if (data) {
+      if (data.error) return
       setUserData(data)
       router.push('/loginConfirm')
     }

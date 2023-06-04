@@ -6,6 +6,7 @@ const getUserById = async (req, res) => {
     res.json(user.rows[0])
   } catch (err) {
     console.error(err.message)
+    res.status(400).json({ error: true })
   }
 }
 
