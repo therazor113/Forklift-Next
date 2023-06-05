@@ -1,35 +1,25 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useState } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import UserContext from 'contexts/UserContext'
-import useFetchInput from 'hooks/useFetchInput'
+import FetchLogIn from 'components/utilities/FetchLogIn'
+import useAPI from 'hooks/useAPI'
 
 import classes from './styles.module.scss'
 
 const IndexTerminal = () => {
+  const [inputValue, setInputValue] = useState('')
+  const [valid, setValid] = useState(true)
   const { setUserData } = useContext(UserContext)
+  const [handleFetch] = useAPI()
   const router = useRouter()
-  const [
-    inputValue,
-    handleChange,
-    handleEnter,,
-    data
-  ] = useFetchInput('', 'api/UsersApi/')
 
-  // setUserData when data changes
-  useEffect(() => {
-    if (data) {
-      if (data.error) return
-      setUserData(data)
-      router.push('/loginConfirm')
-    }
-  }, [data, setUserData, router])
-  // Keyboard enter pressed
-  const handleKeyUp = (e) => {
-    // disabled
-    if (e.key === 'Enter') {
-      handleEnter()
-    }
+  const handleSubmit = async () => {
+    if (!inputValue) return
+    const data = await FetchLogIn(handleFetch, inputValue)
+    if (!data) return setValid(false)
+    setUserData(data)
+    router.push('/loginConfirm')
   }
 
   return (
@@ -37,7 +27,12 @@ const IndexTerminal = () => {
       <h1>Welcome, please scan your badge</h1>
       <div className={classes.inputContainer}>
         <h2>Badge ID: </h2>
-        <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} autoFocus />
+        <input
+          onChange={e => setInputValue(e.target.value)}
+          onKeyUp={e => e.key === 'Enter' && handleSubmit()}
+          style={!valid ? { borderColor: 'red', outline: 'red' } : {}}
+          autoFocus
+        />
         <Link href={'/loginKeypad'}>
           <button>&#x2328;</button>
         </Link>

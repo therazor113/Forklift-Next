@@ -1,36 +1,25 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useState } from 'react'
 import { useRouter } from 'next/router'
 import UserContext from 'contexts/UserContext'
 import Keys from 'components/utilities/KeyPad/Keys'
-import useFetchInput from 'hooks/useFetchInput'
+import FetchLogIn from 'components/utilities/FetchLogIn'
+import useAPI from 'hooks/useAPI'
 
 import classes from './styles.module.scss'
 
 const LoginKeypad = () => {
-  const router = useRouter()
+  const [inputValue, setInputValue] = useState('')
+  const [valid, setValid] = useState(true)
   const { setUserData } = useContext(UserContext)
-  const [
-    inputValue,
-    handleChange,
-    handleEnter,
-    setInputValue,
-    data
-  ] = useFetchInput('', 'api/UsersApi/')
+  const [handleFetch] = useAPI()
+  const router = useRouter()
 
-  // setUserData when data changes
-  useEffect(() => {
-    if (data) {
-      if (data.error) return
-      setUserData(data)
-      router.push('/loginConfirm')
-    }
-  }, [data, setUserData, router])
-  // Keyboard enter pressed
-  const handleKeyUp = (e) => {
-    // disabled
-    if (e.key === 'Enter') {
-      handleEnter()
-    }
+  const handleSubmit = async () => {
+    if (!inputValue) return
+    const data = await FetchLogIn(handleFetch, inputValue)
+    if (!data) return setValid(false)
+    setUserData(data)
+    router.push('/loginConfirm')
   }
 
   return (
@@ -39,13 +28,19 @@ const LoginKeypad = () => {
       <h1>Please enter your badge ID. Then press Enter.</h1>
       <div className={classes.inputContainer}>
         <h2>Badge ID:</h2>
-        <input value={inputValue} onChange={handleChange} onKeyUp={handleKeyUp} autoFocus/>
+        <input
+          value={inputValue}
+          onChange={e => setInputValue(e.target.value)}
+          onKeyUp={e => e.key === 'Enter' && handleSubmit()}
+          style={!valid ? { borderColor: 'red', outline: 'red' } : {}}
+          autoFocus
+        />
       </div>
         <Keys
           classes={classes}
           inputValue={inputValue}
           setInputValue={setInputValue}
-          onEnter={handleEnter}
+          onEnter={handleSubmit}
         />
     </main>
   )
