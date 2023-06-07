@@ -25,7 +25,7 @@ Live Demo:
 
 6. Once a product number is entered you will be prompted with the product details, this allows changing handling units tendered (HU), and total weight of the shipment
 
-7. Add some new weights by selecting the button labeled "Random Weight" and change the HU with the arrow keys in the bottom left, then hit "Capture", this will add the current weight and total HU's of that weight to this shipment</br>
+7. Add some weights by selecting the button "Random Weight" and change the HU with the arrow keys in the bottom left, then hit "Capture", this will add the current weight and total HU's of that weight set</br>
 (To remove weights captured, use the arrow buttons on the right to select the weight desired to delete (highlighted in yellow) and hit "Delete selected", the button "Abort All" will delete all captured weights for this shipment)
 
 8. After capturing some new weights for this shipment, hit the button labeled "Complete" to continue</br>
