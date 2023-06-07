@@ -10,9 +10,9 @@ Live Demo:
 (If a keyboard is not available, select the green button with the icon of a keyboard)
 
 2. Once logged in you will be prompted with the current name of the account, select "Yes" to continue or select "No" to go back</br>
-(If you select device setup, the next screen will open the device settings, these settings can be changed and saved to the DB, if selected by accident, hit submit to continue)
+(If you select device setup, the next screen will open the device settings, these settings can be changed and saved to the DB)
 
-3. After selecting "Yes" you will be prompted with your forklift details, to continue you must clear the preset weight by hitting "Zero Scale</br>
+3. After selecting "Yes" you will be prompted with your forklift details, to continue first clear the preset weight by hitting "Zero Scale"</br>
 (The button labeled "Scale Not Working" is meant to continue without resetting the scale, this is not enabled as there is no scale device connected)
 
 4. Once you have cleared the scale, select the "Yes" button to continue</br>
@@ -20,7 +20,7 @@ Live Demo:
 
 6. Finishing inspection will bring you to the Nav page where you can request a trailer ("Retry"), search for freight/trailer ("Live Green Sheet"), enter a product number manually ("MANUAL PRO ENTRY")
 
-5. Select the "MANUAL PRO ENTRY" button and input one of the four provided product numbers (123456789, 987654321, 100000000, 222222222) And press enter on your keyboard (or the "Enter" button)</br>
+5. Select the "MANUAL PRO ENTRY" button and input one of the four provided product numbers then press enter</br>
 (The "Manual Pro" button will bring you back to the product number keypad, and the button "Previous Pro" will prompt you with previous product numbers you have input during this demo)
 
 6. Once a product number is entered you will be prompted with the product details, this allows changing handling units tendered (HU), and total weight of the shipment
