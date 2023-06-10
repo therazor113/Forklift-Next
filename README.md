@@ -1,7 +1,7 @@
 # Forklift-Next
 
 Early project for learning basics of Javascript, Sass, React, NextJs</br>
-*Styles are based off a forklift work application*
+*Styles are based on a forklift work application*
 
 ## Instructions:
 https://forklift-next.vercel.app/
